@@ -100,7 +100,7 @@ public class MbEncontros
 
     protected virtual bool lugarSeguro()
     {
-        if (
+        if ((
             /*CIDADE DE INFINITY*/
             manager.transform.position.z < 804
             &&
@@ -110,6 +110,18 @@ public class MbEncontros
             &&
             manager.transform.position.x < 570
             /* FIM DE INFINITY */
+            ) ||
+            (
+            /*CIDADE DE Ive*/
+            manager.transform.position.z < 400
+            &&
+            manager.transform.position.z > 280
+            &&
+            manager.transform.position.x > 400
+            &&
+            manager.transform.position.x < 560
+            /* FIM DE Ive */
+            )
             )
             return true;
         return false;
@@ -122,12 +134,12 @@ public class MbEncontros
 
     protected virtual List<encontravel> listaEncontravel()
     {
-        return new List<encontravel>() { //new encontravel(nomesCriatures.PolyCharm,1,1,5),
-            //new encontravel(nomesCriatures.Urkan,1,1,5),
-            //new encontravel(nomesCriatures.Xuash,1,1,5),
-            //new encontravel(nomesCriatures.Florest,1,1,5),
-            //new encontravel(nomesCriatures.Arpia,1,1,5),
-            new encontravel(nomesCriatures.Iruin,1,1,5)
+        return new List<encontravel>() { new encontravel(nomesCriatures.PolyCharm,1,1,3),
+            new encontravel(nomesCriatures.Urkan,1,1,3),
+            new encontravel(nomesCriatures.Xuash,1,1,3),
+            new encontravel(nomesCriatures.Florest,1,1,3),
+            new encontravel(nomesCriatures.Arpia,1,1,3),
+            new encontravel(nomesCriatures.Iruin,1,1,3)
         };
     }
 

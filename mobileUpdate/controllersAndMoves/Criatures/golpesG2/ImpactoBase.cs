@@ -4,7 +4,7 @@ using System.Collections;
 [System.Serializable]
 public class ImpactoBase : GolpeBase
 {
-    private AtualizadorDeImpactos aImpacto = new AtualizadorDeImpactos();
+    [System.NonSerialized]private AtualizadorDeImpactos aImpacto;
     protected CaracteristicasDeImpacto carac = new CaracteristicasDeImpacto()
     {
         noImpacto = NoImpacto.impactoComum.ToString(),
@@ -16,6 +16,7 @@ public class ImpactoBase : GolpeBase
 
     public override void IniciaGolpe(GameObject G)
     {
+        aImpacto = new AtualizadorDeImpactos();
         aImpacto.ReiniciaAtualizadorDeImpactos();
         AnimadorCriature.AnimaAtaque(G, Nome.ToString());
     }

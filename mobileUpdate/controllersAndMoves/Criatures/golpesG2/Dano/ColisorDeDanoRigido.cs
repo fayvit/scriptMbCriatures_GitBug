@@ -22,6 +22,6 @@ public class ColisorDeDanoRigido : ColisorDeDanoBase
     void OnCollisionEnter(Collision emQ)
     {
         Debug.Log(emQ.collider.name + " : " + emQ.gameObject.name + " : " + dono + "collision");
-        funcaoTrigger(emQ.collider);
+        funcaoTrigger(emQ.collider);        
     }
 }

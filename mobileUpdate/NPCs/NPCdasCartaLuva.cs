@@ -21,6 +21,7 @@ public class NPCdasCartaLuva : NPCdeConversa
                 && GameController.g.HudM.DisparaT.IndiceDaConversa == conversa.Length - 1
                 )
             {
+                GameController.g.HudM.Botaozao.FinalizarBotao();
                 estadoInterno = EstadoDoCartaLuva.pergunta;
                 return UpdateInterno();
             }

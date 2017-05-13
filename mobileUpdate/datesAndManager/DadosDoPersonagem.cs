@@ -8,9 +8,9 @@ public class DadosDoPersonagem
     private List<CriatureBase> criaturesArmagedados = new List<CriatureBase>();
     private List<MbItens> itens = new List<MbItens>();
     private UltimoArmagedomVisitado ultimoArmagedom = new UltimoArmagedomVisitado(new Vector3(483, 1.2f, 755),NomesCenas.MbInfinity);
+    private int cristais = 0;
     private int criatureSai = 1;
-    public int itemSai = 0;
-    public int cristais = 1021;
+    public int itemSai = 0;    
     public int maxCarregaveis = 5;
 
     public List<CriatureBase> CriaturesAtivos
@@ -43,35 +43,32 @@ public class DadosDoPersonagem
         set { ultimoArmagedom = value; }
     }
 
+    public int Cristais
+    {
+        get { return cristais; }
+        set { cristais = value; }
+    }
+
     public void InicializadorDosDados()
     {
         CriaturesAtivos = new List<CriatureBase>() {
-             new CriatureBase(nomesCriatures.Babaucu,2),
-             new CriatureBase(nomesCriatures.Xuash,1),
-             new CriatureBase(nomesCriatures.Arpia,2),
-              new CriatureBase(nomesCriatures.PolyCharm,1),              
-             new CriatureBase(nomesCriatures.Iruin),
-             new CriatureBase(nomesCriatures.Urkan),
+           //  new CriatureBase(nomesCriatures.Babaucu,2),
+            // new CriatureBase(nomesCriatures.Xuash,1),
+             //new CriatureBase(nomesCriatures.Arpia,2),
+              //new CriatureBase(nomesCriatures.PolyCharm,1),              
+             //new CriatureBase(nomesCriatures.Iruin),
+             new CriatureBase(nomesCriatures.Florest),
         };
 
         //CriaturesAtivos[1].CaracCriature.meusAtributos.PV.Corrente = 0;
         //ultCriaturesAtivos[2].CaracCriature.meusAtributos.PV.Corrente = 2;
 
-        CriaturesArmagedados = new List<CriatureBase>() {
-             new CriatureBase(nomesCriatures.Urkan,2),
-             new CriatureBase(nomesCriatures.Florest,1),
-             new CriatureBase(nomesCriatures.Arpia,2),
-              new CriatureBase(nomesCriatures.Xuash,1),              
-             new CriatureBase(nomesCriatures.PolyCharm)
-        };
+        
 
         Itens = new List<MbItens>()
         {
-            PegaUmItem.Retorna(nomeIDitem.maca,1),
-            //PegaUmItem.Retorna(nomeIDitem.cartaLuva,11),
-            PegaUmItem.Retorna(nomeIDitem.maca,2),
-            PegaUmItem.Retorna(nomeIDitem.maca,3),
-            PegaUmItem.Retorna(nomeIDitem.maca,93),
+            PegaUmItem.Retorna(nomeIDitem.maca,10),
+            PegaUmItem.Retorna(nomeIDitem.cartaLuva,11),
         };
         /*
         itens.Add(new item(nomeIDitem.maca) { estoque = 20 });

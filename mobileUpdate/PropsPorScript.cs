@@ -99,16 +99,16 @@ public class PropsPorScript : MonoBehaviour
                 zMin = (int)T.z;
         }
 
-        GameObject[,] meusGs= new GameObject[(xMax-xMin)/10,(zMax-zMin)/10];
-        
+        GameObject[,] meusGs= new GameObject[(xMax-xMin)/10+1,(zMax-zMin)/10+1];
+        Debug.Log("o tamanho é " + meusGs.GetLength(0) + " : " + meusGs.GetLength(1));
         
         for (int i = 0; i < Gs.Length; i++)
         {
             if (Gs[i].transform.localScale==new Vector3(10,2,10))
             {
                 T = Gs[i].transform.position;
-                
-                meusGs[((int)T.x - xMin) / 10-1, ((int)T.z - zMin) / 10-1] = Gs[i];
+                Debug.Log((((int)T.x - xMin) / 10) + " :" +( ((int)T.z - zMin) / 10));
+                meusGs[((int)T.x - xMin) / 10, ((int)T.z - zMin) / 10] = Gs[i];
             }
         }
 

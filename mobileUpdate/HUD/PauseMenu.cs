@@ -18,7 +18,7 @@ public class PauseMenu : MonoBehaviour
 
     void OnEnable()
     {
-        cristais.text = "Cristais:\t\t " + GameController.g.Manager.Dados.cristais;
+        cristais.text = "Cristais:\t\t " + GameController.g.Manager.Dados.Cristais;
     }
     // Use this for initialization
     void Start()

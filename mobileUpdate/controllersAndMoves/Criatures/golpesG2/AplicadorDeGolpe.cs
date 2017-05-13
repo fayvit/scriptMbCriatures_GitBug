@@ -28,8 +28,7 @@ public class AplicadorDeGolpe :MonoBehaviour
         }
         else if (gerente.Estado == CreatureManager.CreatureState.emDano)
         {
-            LiberaDoAtacando();
-            Destroy(this);
+            FinalizaGolpe();
         }
 
         if (tempoDecorrido > esseGolpe.TempoDeMoveMax && !retornou)
@@ -41,10 +40,16 @@ public class AplicadorDeGolpe :MonoBehaviour
             }
             else if (tempoDecorrido > esseGolpe.TempoDeDestroy)
             {
-                LiberaDoAtacando();
-                Destroy(this);
+                FinalizaGolpe();
             }
         }
+    }
+
+    private void FinalizaGolpe()
+    {
+        esseGolpe.FinalizaEspecificoDoGolpe();
+        LiberaDoAtacando();
+        Destroy(this);
     }
 
     private void LiberaDoAtacando()
@@ -58,7 +63,6 @@ public class AplicadorDeGolpe :MonoBehaviour
     {
         tempoDecorrido = 0.0f;
         if (!gerente.MudaAplicaGolpe())
-            Destroy(this);
-            
+            Destroy(this);            
     }
 }

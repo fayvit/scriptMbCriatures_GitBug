@@ -127,7 +127,7 @@ public class EncounterManager
         else
             estado = EncounterState.VoltarParaPasseio;
 
-        manager.Dados.cristais += aDoI.PV.Maximo;
+        manager.Dados.Cristais += aDoI.PV.Maximo;
     }
 
     protected void VerifiqueVida()

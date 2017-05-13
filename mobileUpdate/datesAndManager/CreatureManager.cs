@@ -97,7 +97,7 @@ public class CreatureManager : MonoBehaviour
             case CreatureState.emDano:
             case CreatureState.aplicandoGolpe:
                 if (mov!=null)
-                    mov.AplicadorDeMovimentos(Vector3.zero, meuCriatureBase.CaracCriature.distanciaFundamentadora);
+                    mov.AplicadorDeMovimentos(Vector3.zero, meuCriatureBase.CaracCriature.distanciaFundamentadora,transform);
             break;
             case CreatureState.seguindo:
             case CreatureState.selvagem:
@@ -127,7 +127,7 @@ public class CreatureManager : MonoBehaviour
                 }
                 else
                 {
-                    mov.AplicadorDeMovimentos(dir, meuCriatureBase.CaracCriature.distanciaFundamentadora);
+                    mov.AplicadorDeMovimentos(dir, meuCriatureBase.CaracCriature.distanciaFundamentadora,transform);
                 }
 
             break;

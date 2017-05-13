@@ -1,15 +1,8 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class BicoG2 : GolpeBase
+public class BicoG2 : ImpactoBase
 {
-    private AtualizadorDeImpactos aImpacto = new AtualizadorDeImpactos();
-    private CaracteristicasDeImpacto carac = new CaracteristicasDeImpacto()
-    {
-        noImpacto = NoImpacto.impactoComum.ToString(),
-        nomeTrail = Trails.umCuboETrail.ToString(),
-        parentearNoOsso = true
-    };
 
     public BicoG2() : base(new ContainerDeCaracteristicasDeGolpe()
     {
@@ -31,9 +24,15 @@ public class BicoG2 : GolpeBase
     }
         )
     {
-
+        carac = new CaracteristicasDeImpacto()
+        {
+            noImpacto = NoImpacto.impactoComum.ToString(),
+            nomeTrail = Trails.umCuboETrail.ToString(),
+            parentearNoOsso = true
+        };
     }
 
+    /*
     public override void IniciaGolpe(GameObject G)
     {
         aImpacto.ReiniciaAtualizadorDeImpactos();
@@ -43,5 +42,5 @@ public class BicoG2 : GolpeBase
     public override void UpdateGolpe(GameObject G)
     {
         aImpacto.ImpatoAtivo(G, this, carac);
-    }
+    }*/
 }

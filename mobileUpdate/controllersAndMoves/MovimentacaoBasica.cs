@@ -3,7 +3,7 @@
 [System.Serializable]
 public class MovimentacaoBasica 
 {
-    public delegate void Acoes();
+    //public delegate void Acoes();
 
     [SerializeField]private CaracteristicasDeMovimentacao caracMov;
     [SerializeField]private ElementosDeMovimentacao elementos;
@@ -35,7 +35,7 @@ public class MovimentacaoBasica
 
     public AnimadorHumano Animador
     {
-        get { return elementos.animador; }
+          get { return elementos.animador; }
     }
 
     public MovimentacaoBasica(CaracteristicasDeMovimentacao caracMov, ElementosDeMovimentacao elementos)
@@ -72,8 +72,19 @@ public class MovimentacaoBasica
         return noChao;
     }
 
-    public void AplicadorDeMovimentos(Vector3 dir,float distanciaFundamentadora = 0.01f,Acoes acaoNaMovimentacao = null)
+    public void AplicadorDeMovimentos(
+        Vector3 dir,
+        float distanciaFundamentadora = 0.01f,
+        Transform T = null,
+        System.Action acaoNaMovimentacao = null
+        )
     {
+        if (elementos.transform == null && T != null)
+        {
+            elementos.transform = T;
+            elementos.controle = T.GetComponent<CharacterController>();
+        }
+
         if (NoChao(distanciaFundamentadora))
         {
             movimentacao(dir);
@@ -92,6 +103,9 @@ public class MovimentacaoBasica
 
     public void movimentacao(Vector3 direcaoAlvo)
     {
+        if (pulo == null)
+            pulo = new Pulo(caracMov.caracPulo, elementos);
+
         pulo.NaoEstouPulando();
         targetSpeed = Mathf.Min(direcaoAlvo.magnitude, 1.0f);
 
@@ -212,7 +226,7 @@ public struct ElementosDeMovimentacao
     
     public ICameraBase cam;
     */
-    public ElementosDeMovimentacao(Transform transform,AnimadorHumano animador
+    public ElementosDeMovimentacao(Transform transform,AnimadorHumano animador = null
                                     /*GerenciadorDeEstadoDePersonagem gerente,
                                     , ICameraBase cam*/)
     {

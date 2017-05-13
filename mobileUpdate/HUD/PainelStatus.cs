@@ -40,6 +40,7 @@ public class PainelStatus : MonoBehaviour
         {
             if (i < ativos.Length)
             {
+                abas[i].transform.parent.gameObject.SetActive(true);
                 abas[i].texture = elementosDoJogo.el.RetornaMini(ativos[i].NomeID);
                 btnAbas[i].sprite = deselecionado;
             }

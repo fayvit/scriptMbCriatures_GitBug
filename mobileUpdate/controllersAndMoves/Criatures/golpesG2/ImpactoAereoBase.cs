@@ -1,20 +1,19 @@
 ﻿using UnityEngine;
-using UnityEngine.AI;
 using System.Collections;
 
+[System.Serializable]
 public class ImpactoAereoBase : GolpeBase
 {
     protected CaracteristicasDeImpactoComSalto carac;
-    private AtualizadorDeImpactoAereo aImpacto = new AtualizadorDeImpactoAereo();
+    [System.NonSerialized]private AtualizadorDeImpactoAereo aImpacto = new AtualizadorDeImpactoAereo();
 
     public ImpactoAereoBase(ContainerDeCaracteristicasDeGolpe C) : base(C) { }
 
     public override void IniciaGolpe(GameObject G)
     {
-        NavMeshAgent nav = G.GetComponent<NavMeshAgent>();
 
-        if (nav.enabled)
-            nav.Stop();
+        if (aImpacto == null)
+            aImpacto = new AtualizadorDeImpactoAereo();
 
         aImpacto.ReiniciaAtualizadorDeImpactos(G);
         DirDeREpulsao = G.transform.forward;
@@ -28,6 +27,11 @@ public class ImpactoAereoBase : GolpeBase
     public override void UpdateGolpe(GameObject G)
     {
         aImpacto.ImpactoAtivo(G, this, carac);
+    }
+
+    public override void  FinalizaEspecificoDoGolpe()
+    {
+        aImpacto.ReligarNavMesh();
     }
 }
 

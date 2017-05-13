@@ -13,7 +13,7 @@ public class ListaDeTextosPT_BR
 
                 ColocaTextos(ref txt, TextosChaveEmPT_BR.txt);
                 ColocaTextos(ref txt, TextosInfinity.txt);
-                
+                ColocaTextos(ref txt, TextosIve.txt);
             }
 
             return txt;

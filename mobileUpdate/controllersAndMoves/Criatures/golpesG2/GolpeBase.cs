@@ -191,6 +191,11 @@ public class GolpeBase : IGolpeBase
         throw new NotImplementedException();
     }
 
+    public virtual void FinalizaEspecificoDoGolpe()
+    {
+
+    }
+
     public string NomeEmLinguas()
     {
         return bancoDeTextos.falacoes[heroi.lingua]["listaDeGolpes"][(int)Nome];

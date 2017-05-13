@@ -29,6 +29,7 @@ public interface IGolpeBase
 
     void IniciaGolpe(GameObject G);
     void UpdateGolpe(GameObject G);
+    void FinalizaEspecificoDoGolpe();
 
 }
 

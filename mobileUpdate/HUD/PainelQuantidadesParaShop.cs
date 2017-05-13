@@ -46,13 +46,13 @@ public class PainelQuantidadesParaShop : MonoBehaviour
     {
         if (comprar)
         {
-            if ((quantidade + tanto) * esseItem.Valor > dados.cristais)
+            if ((quantidade + tanto) * esseItem.Valor > dados.Cristais)
             {
                 DesligaBotoes();
                 GameController.g.HudM.UmaMensagem.ConstroiPainelUmaMensagem(ReligarBotoes,
-                    string.Format(textos[7], dados.cristais / esseItem.Valor, item.nomeEmLinguas(esseItem.ID))
+                    string.Format(textos[7], dados.Cristais / esseItem.Valor, item.nomeEmLinguas(esseItem.ID))
                     );
-                AtualizaQuantidade(dados.cristais / esseItem.Valor,esseItem.Valor);
+                AtualizaQuantidade(dados.Cristais / esseItem.Valor,esseItem.Valor);
             }
             else
             {
@@ -110,7 +110,7 @@ public class PainelQuantidadesParaShop : MonoBehaviour
         dados = GameController.g.Manager.Dados;
         quantidade = 1;
 
-        labelCristais.text = textos[0] + dados.cristais;
+        labelCristais.text = textos[0] + dados.Cristais;
         mensagem.text = string.Format( comprar ? textos[3] : textos[4],item.nomeEmLinguas(itemAlvo.ID));
         infos.text = bancoDeTextos.falacoes[heroi.lingua]["shopInfoItem"][(int)(itemAlvo.ID)];
         quantidadeTXt.text = quantidade.ToString();
@@ -144,19 +144,19 @@ public class PainelQuantidadesParaShop : MonoBehaviour
     {
         if (comprar)
         {
-            if (dados.cristais >= quantidade * esseItem.Valor)
+            if (dados.Cristais >= quantidade * esseItem.Valor)
             {
                 dados.AdicionaItem(esseItem.ID, quantidade);
-                dados.cristais -= quantidade * esseItem.Valor;
+                dados.Cristais -= quantidade * esseItem.Valor;
                 gameObject.SetActive(false);
             }
             else
             {
                 DesligaBotoes();
                 GameController.g.HudM.UmaMensagem.ConstroiPainelUmaMensagem(ReligarBotoes,
-                    string.Format(textos[7], dados.cristais / esseItem.Valor, item.nomeEmLinguas(esseItem.ID))
+                    string.Format(textos[7], dados.Cristais / esseItem.Valor, item.nomeEmLinguas(esseItem.ID))
                     );
-                AtualizaQuantidade(dados.cristais / esseItem.Valor, esseItem.Valor);
+                AtualizaQuantidade(dados.Cristais / esseItem.Valor, esseItem.Valor);
             }
         }
         else
@@ -164,7 +164,7 @@ public class PainelQuantidadesParaShop : MonoBehaviour
             if (quantidade <= dados.TemItem(esseItem.ID))
             {
                 MbItens.RetirarUmItem(GameController.g.Manager, esseItem, quantidade, FluxoDeRetorno.armagedom);
-                dados.cristais += (quantidade * esseItem.Valor / 4);
+                dados.Cristais += (quantidade * esseItem.Valor / 4);
                 gameObject.SetActive(false);
             }
             else

@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[System.Serializable]
 public class AtualizadorDeImpactos
 {
     private bool procurouAlvo = false;
     private bool addView = false;
     private float tempoDecorrido = 0;
-    [System.NonSerialized]private Transform alvoProcurado;
-    [System.NonSerialized]private CharacterController controle;
+    private Transform alvoProcurado;
+    private CharacterController controle;
 
     public void ReiniciaAtualizadorDeImpactos()
     {

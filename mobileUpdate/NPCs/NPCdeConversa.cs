@@ -26,11 +26,13 @@ public class NPCdeConversa
     {
         caminhando,
         parado,
-        conversando
+        conversando,
+        finalizadoComBotao
     }
     
     public void Start(Transform T)
     {
+        
         meuTransform = T;
         conversa = bancoDeTextos.RetornaListaDeTextoDoIdioma(chaveDaConversa).ToArray();
         //tempoParado = Random.Range(TEMPO_MIN_PARADO, TEMPO_MAX_PARADO);
@@ -72,9 +74,11 @@ public class NPCdeConversa
                 if (GameController.g.HudM.DisparaT.UpdateDeTextos(conversa, fotoDoNPC))
                 {
                     FinalizaConversa();
-                    return true;
                 }
             break;
+            case EstadoDoNPC.finalizadoComBotao:
+                estado = EstadoDoNPC.parado;
+                return true;
         }
 
         return false;
@@ -82,10 +86,11 @@ public class NPCdeConversa
 
     protected void FinalizaConversa()
     {
-        estado = EstadoDoNPC.parado;
+        estado = EstadoDoNPC.finalizadoComBotao;
         meuTransform.rotation = Quaternion.LookRotation(-Vector3.forward);
         MonoBehaviour.Destroy(destrutivel.gameObject);
         GameController.g.HudM.ligarControladores();
+        GameController.g.HudM.Botaozao.FinalizarBotao();
         AndroidController.a.LigarControlador();
     }
 
@@ -94,6 +99,7 @@ public class NPCdeConversa
         destrutivel = Destrutivel;
         siga.PareAgora();
         GameController.g.HudM.DisparaT.IniciarDisparadorDeTextos();
+        GameController.g.HudM.Botaozao.IniciarBotao(FinalizaConversa, "Cale a boca!");
         estado = EstadoDoNPC.conversando;
     }
 }
