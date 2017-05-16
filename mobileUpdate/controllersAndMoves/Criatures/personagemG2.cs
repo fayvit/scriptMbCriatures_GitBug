@@ -29,6 +29,33 @@ public static class personagemG2
             case nomesCriatures.Babaucu:
                 retorno = MbBabaucu.Criature;
             break;
+            case nomesCriatures.Serpente:
+                retorno = MbSerpente.Criature;
+            break;
+            case nomesCriatures.Nessei:
+                retorno = MbNessei.Criature;
+            break;
+            case nomesCriatures.Cracler:
+                retorno = MbCracler.Criature;
+            break;
+            case nomesCriatures.Flam:
+                retorno = MbFlam.Criature;
+            break;
+            case nomesCriatures.Rocketler:
+                retorno = MbRocketler.Criature;
+            break;
+            case nomesCriatures.Baratarab:
+                retorno = MbBaratarab.Criature;
+            break;
+            case nomesCriatures.Aladegg:
+                retorno = MbAladegg.Criature;
+            break;
+            case nomesCriatures.Onarac:
+                retorno = MbOnarac.Criature;
+            break;
+            case nomesCriatures.Marak:
+                retorno = MbMarak.Criature;
+            break;
             default:
                 retorno = new CriatureBase();
             break;

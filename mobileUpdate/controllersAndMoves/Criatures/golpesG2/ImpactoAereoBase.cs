@@ -92,5 +92,6 @@ public enum ToqueAoChao
 public enum PreparaSalto
 {
     nulo,
-    preparaImpactoAoChao
+    preparaImpactoAoChao,
+    impactoBaixo
 }

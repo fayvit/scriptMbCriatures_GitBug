@@ -42,16 +42,16 @@ public class AtualizadorDeImpactos
             ajudaAtaque(alvoProcurado, G.transform);
         }
 
-        if (tempoDecorrido > ativa.TempoDeMoveMin  && !addView)
+        if (!addView)
         {
-
+            tempoDecorrido += ativa.TempoDeMoveMin;
             ColisorDeGolpe.AdicionaOColisor(G,ativa,caracteristica,tempoDecorrido);
 
             addView = true;
 
         }
 
-        if (tempoDecorrido < ativa.TempoDeMoveMax && tempoDecorrido > ativa.TempoDeMoveMin)
+        if (tempoDecorrido < ativa.TempoDeMoveMax)
         {
             if (((int)(tempoDecorrido * 10)) % 2 == 0 && alvoProcurado)
                 ajudaAtaque(alvoProcurado,G.transform);
@@ -96,5 +96,7 @@ public enum NoImpacto
     impactoDeFogo,
     impactoDeVento,
     impactoDeGosma,
-    impactoDeGosmaAcida
+    impactoDeGosmaAcida,
+    impactoVenenoso,
+    impactoDePedra
 }

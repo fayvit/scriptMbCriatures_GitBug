@@ -9,6 +9,7 @@ public class HudManager
     [SerializeField]private HudVida hudInimigo;
     [SerializeField]private GameObject containerDoInimigo;
     [SerializeField]private GameObject containerDoLabelInimigo;
+    [SerializeField]private PainelMensCriature painelMensagemCriature;
 
     [SerializeField]private BtnsManager btns;
     [SerializeField]private ControladorDaHudEntradaDeCriatures entraCriatures;
@@ -111,6 +112,11 @@ public class HudManager
     public HudTentandoAprenderGolpe H_Tenta
     {
         get { return hTenta; }
+    }
+
+    public PainelMensCriature PainelMensagemCriature
+    {
+        get { return painelMensagemCriature; }
     }
 
     /*

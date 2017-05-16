@@ -25,6 +25,8 @@ public interface IGolpeBase
     float TempoDeMoveMax { get; }
     float TempoDeDestroy { get; }
 
+    float ColisorScale { get; }
+
     Vector3 DirDeREpulsao { get; set; }
 
     void IniciaGolpe(GameObject G);
@@ -59,4 +61,6 @@ public class ContainerDeCaracteristicasDeGolpe
     public float tempoDeMoveMin = 0.25f;
     public float tempoDeMoveMax = 0.5f;
     public float tempoDeDestroy = 1;
+
+    public float colisorScale = 1;
 }

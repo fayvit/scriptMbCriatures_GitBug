@@ -86,7 +86,8 @@ public class testeCarregamento : MonoBehaviour
     public static void InvocarSetScene(Scene scene)
     {
         Debug.Log(scene.name);
-        if (!SceneManager.SetActiveScene(scene))
+        SceneManager.SetActiveScene(scene);
+        if (SceneManager.GetActiveScene()!=scene)
             GameController.g.StartCoroutine(setarScene(scene));
         Debug.Log("nomeAtiva: " + SceneManager.GetActiveScene().name);
     }

@@ -62,6 +62,8 @@ public class MbEncontros
                 GameController.g.Salvador.SalvarAgora();         
                 RetornaParaModoPasseio();
                 AplicadorDeCamera.cam.GetComponent<Camera>().farClipPlane = 300;
+                System.GC.Collect();
+                Resources.UnloadUnusedAssets();
             }
 
 
@@ -134,13 +136,20 @@ public class MbEncontros
 
     protected virtual List<encontravel> listaEncontravel()
     {
+        return new List<encontravel>() { new encontravel(nomesCriatures.Onarac, 1, 2, 3) };
+        /*
         return new List<encontravel>() { new encontravel(nomesCriatures.PolyCharm,1,1,3),
             new encontravel(nomesCriatures.Urkan,1,1,3),
             new encontravel(nomesCriatures.Xuash,1,1,3),
             new encontravel(nomesCriatures.Florest,1,1,3),
             new encontravel(nomesCriatures.Arpia,1,1,3),
-            new encontravel(nomesCriatures.Iruin,1,1,3)
-        };
+            new encontravel(nomesCriatures.Iruin,1,1,3),
+            new encontravel(nomesCriatures.Serpente, 1, 1, 3),
+            new encontravel(nomesCriatures.Nessei, 1, 1, 3),
+            new encontravel(nomesCriatures.Cracler, 1, 1, 3),
+            new encontravel(nomesCriatures.Flam, 1, 1, 3),
+            new encontravel(nomesCriatures.Rocketler, 1, 1, 3)
+        };*/
     }
 
     encontravel criatureEncontrado()

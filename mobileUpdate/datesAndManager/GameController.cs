@@ -59,6 +59,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         g = this;
+        PainelMensCriature.p = hudM.PainelMensagemCriature;
         usoDeItens = new MbUsoDeItem();
         VerificaSetarManager();
         encontros.Start();

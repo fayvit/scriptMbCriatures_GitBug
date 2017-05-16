@@ -5,6 +5,7 @@ using System.Collections;
 [System.Serializable]
 public class AtualizadorDeImpactoAereo
 {
+    private Vector3 dirDeslocamento;
     private Vector3 posInicial;
     private Transform alvoProcurado;
     private CharacterController controle;
@@ -40,7 +41,7 @@ public class AtualizadorDeImpactoAereo
     public void ImpactoAtivo(GameObject G, IGolpeBase ativa, CaracteristicasDeImpactoComSalto caracteristica)
     {
         tempoDecorrido += Time.deltaTime;
-        if (tempoDecorrido > ativa.TempoDeMoveMin && !adview)
+        if (!adview)
         {
             if (!procurouAlvo)
             {
@@ -49,7 +50,7 @@ public class AtualizadorDeImpactoAereo
                // Debug.Log(alvoProcurado + "  esse é o alvo");
                 AtualizadorDeImpactos.ajudaAtaque(alvoProcurado, G.transform);
                 if (alvoProcurado != null)
-                    ativa.DirDeREpulsao = (alvoProcurado.position - G.transform.position).normalized;
+                    ativa.DirDeREpulsao = (Vector3.ProjectOnPlane(alvoProcurado.position - G.transform.position,Vector3.up)).normalized;
             }
 
             if (!adview)
@@ -81,7 +82,7 @@ public class AtualizadorDeImpactoAereo
 
         if (alvo != null)
         {
-            pontoAlvo += alvo.transform.position + 3 * Vector3.up + 0.35f * (G.transform.position - alvo.position);
+            pontoAlvo += alvo.transform.position + 3 * Vector3.up + (G.transform.position - alvo.position).normalized;
         }
 
 
@@ -99,6 +100,7 @@ public class AtualizadorDeImpactoAereo
            )
         {
             alcancouOApceDaAltura = true;
+            direcaoDoSalto = Vector3.ProjectOnPlane(direcaoDoSalto, Vector3.up);
         }
 
         
@@ -116,7 +118,6 @@ public class AtualizadorDeImpactoAereo
                     ativa.DirDeREpulsao) < 0)
                 {                    
                     descendo = descendo + ativa.DirDeREpulsao;
-                 //   Debug.Log("menorQueZero" + descendo);
                 }
                 else
                   descendo = descendo+  0.1f*(alvo.position - G.transform.position);
@@ -125,11 +126,9 @@ public class AtualizadorDeImpactoAereo
                 G.transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(descendo, Vector3.up));
             }
             controle.Move(descendo * ativa.VelocidadeDeGolpe * Time.deltaTime);
-          //  Debug.Log("descendo");
         }
         else
         {
-           // Debug.Log("subindo" + alvo);
 
 
             controle.Move(direcaoDoSalto.normalized * Time.deltaTime * ativa.VelocidadeDeGolpe);
@@ -141,38 +140,47 @@ public class AtualizadorDeImpactoAereo
 
     void AvanceEPareAbaixo(Transform alvo, GameObject G, IGolpeBase ativa)
     {
-        float distanciaDeParada = 1.75f;
-        float subindo = 9.8f;
+        float distanciaDeParada = 5.75f;
         float velocidadeAvante = ativa.VelocidadeDeGolpe;
-        Vector3 V = Vector3.zero;
 
+        Vector3 V = posInicial+10*ativa.DirDeREpulsao;
+        Vector3 project;
         if (alvo)
         {
             V = alvo.position;
-            AtualizadorDeImpactos.ajudaAtaque(alvo, G.transform);
+            project = (Vector3.ProjectOnPlane(G.transform.position - V, Vector3.up));
+          //  if (Vector3.Dot(project,G.transform.forward)>0)
+            //    AtualizadorDeImpactos.ajudaAtaque(alvo, G.transform);
         }
 
-        if (((G.transform.position - V).magnitude > distanciaDeParada
+        project = (Vector3.ProjectOnPlane(G.transform.position - V, Vector3.up));
+
+        if ((project.magnitude > distanciaDeParada
             &&
             G.transform.position.y - posInicial.y < 4
             &&
             !alcancouOApceDaAltura)
-           ||
-           tempoDecorrido > 1.25f)
+           &&
+           tempoDecorrido < ativa.TempoDeMoveMax/2)
         {
-            subindo = -11;
+            dirDeslocamento = (velocidadeAvante * G.transform.forward + Vector3.up * 15);
         }
-        else if ((G.transform.position - V).magnitude <= distanciaDeParada)
+        else if (project.magnitude <= distanciaDeParada)
         {
-            velocidadeAvante = 0;
+            
+            dirDeslocamento = Vector3.Lerp(dirDeslocamento, velocidadeAvante * G.transform.forward + Vector3.down * 9.8f, 20 * Time.deltaTime);
+            alcancouOApceDaAltura = true;
+        }
+        else if (G.transform.position.y - posInicial.y > 4)
+        {
             alcancouOApceDaAltura = true;
         }
         else
         {
-            alcancouOApceDaAltura = true;
+                dirDeslocamento = Vector3.Lerp(dirDeslocamento, velocidadeAvante * G.transform.forward + Vector3.down * 18.8f, 20 * Time.deltaTime);
         }
 
-        controle.Move((velocidadeAvante * G.transform.forward + Vector3.down * subindo) * Time.deltaTime);
+        controle.Move(dirDeslocamento * Time.deltaTime);
     }
 
     public void ReligarNavMesh()

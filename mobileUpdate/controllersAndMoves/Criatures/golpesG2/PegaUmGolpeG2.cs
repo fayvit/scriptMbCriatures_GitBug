@@ -67,6 +67,33 @@
             case nomesGolpes.sobreSalto:
                 retorno = new MbSobreSalto();
             break;
+            case nomesGolpes.agulhaVenenosa:
+                retorno = new MbAgulhaVenenosa();
+            break;
+            case nomesGolpes.ondaVenenosa:
+                retorno = new MbOndaVenenosa();
+            break;
+            case nomesGolpes.bastao:
+                retorno = new MbBastao();
+            break;
+            case nomesGolpes.pedregulho:
+                retorno = new MbPedregulho();
+            break;
+            case nomesGolpes.cascalho:
+                retorno = new MbCascalho();
+            break;
+            case nomesGolpes.cabecada:
+                retorno = new MbCabecada();
+            break;
+            case nomesGolpes.chute:
+                retorno = new MbChute();
+            break;
+            case nomesGolpes.espada:
+                retorno = new MbEspada();
+            break;
+            case nomesGolpes.chifre:
+                retorno = new MbChifre();
+            break;
             default:
                 retorno = new GolpeBase(new ContainerDeCaracteristicasDeGolpe());
             break;

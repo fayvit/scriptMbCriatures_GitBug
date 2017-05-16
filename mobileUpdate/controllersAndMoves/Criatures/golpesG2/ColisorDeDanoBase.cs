@@ -32,21 +32,13 @@ public class ColisorDeDanoBase : MonoBehaviour
 
         switch (noImpacto)
         {
-            /*
-		case "ImpactoDeFogo":
-			Qparticles  =Quaternion.LookRotation(Vector3.up);
-		break;
-		*/
-            case "impactoComum":
-            case "impactoDeVento":
-            case "impactoDeGosma":
-            case "impactoDeGosmaAcida":
-            case "impactoDeFogo":
+            case "impactoComum":           
                 Qparticles = Quaternion.LookRotation(dono.transform.forward);
-                break;
+            break;
             default:
-                Qparticles = Quaternion.LookRotation(Vector3.up);
-                break;
+                GameObject impacto = elementosDoJogo.el.retorna(noImpacto);
+                Qparticles = impacto.transform.rotation;
+            break;
         }
 
 

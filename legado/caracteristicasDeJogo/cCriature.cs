@@ -145,7 +145,7 @@ public class cCriature {
 public enum nomesCriatures
 {
 	Xuash,
-    Florest, FlorestR,
+    Florest, 
     Marak,
 	PolyCharm,
 	FelixCat,

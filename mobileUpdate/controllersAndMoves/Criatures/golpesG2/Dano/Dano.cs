@@ -152,6 +152,12 @@ public class Dano
             +" A defesa do inimigo é "+defesa
             +" A potencia original é "+potenciaDoAtacante);
 
+        GameObject visaoDeDano = elementosDoJogo.el.retorna("visaoDeDano");
+        visaoDeDano = (GameObject)MonoBehaviour.Instantiate(visaoDeDano, doAtacado.transform.position, Quaternion.identity);
+        danoAparecendo danoAp = visaoDeDano.GetComponent<danoAparecendo>();
+        danoAp.dano = dano;
+        danoAp.atacado = doAtacado.transform;
+
         /*
         if (X.cAtributos[0].Corrente > 0)
             aplicaStatus(T, X, ativa, Y);

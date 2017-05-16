@@ -18,7 +18,7 @@ public class ColisorDeGolpe
         colisor C = pegueOColisor(G,golpeAtivo.Nome);// = new colisor();
 
         GameObject view2 = (GameObject)MonoBehaviour.Instantiate(view, C.deslColisor,view.transform.rotation);
-
+        
 
         if (caracteristica.parentearNoOsso)
             view2.transform.parent = G.transform.Find(C.osso).transform;
@@ -29,6 +29,7 @@ public class ColisorDeGolpe
         view2.transform.localRotation = view.transform.rotation;
         view2.GetComponent<BoxCollider>().center = C.deslColisor;
         view2.name = "colisor" + golpeAtivo.Nome.ToString();
+        view2.transform.localScale *= (golpeAtivo.ColisorScale*C.ColisorScale);
 
 
         /*

@@ -14,8 +14,8 @@ public class PainelMensCriature : MonoBehaviour
 
     void Start()
     {
-        p = this;
-        gameObject.SetActive(false);
+       // p = this;
+        //gameObject.SetActive(false);
     }
 
     void Update()

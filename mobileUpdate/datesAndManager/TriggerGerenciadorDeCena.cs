@@ -46,9 +46,16 @@ public class TriggerGerenciadorDeCena : MonoBehaviour
     void SetarCenaPrincipalNoDescarregamento(Scene cena)
     {
         Scene cenaParaAtivars = SceneManager.GetSceneByName(cenaAtivaNoDesligar.ToString());
+
+        if (cena.isLoaded)
+            DesligaCenas();
+
         if (cenaParaAtivars.isLoaded)
         {
             InvocarSetScene(cenaParaAtivars);
+            System.GC.Collect();
+            Resources.UnloadUnusedAssets();
+            
         }
         else {
             Debug.LogWarning("A cena escolhida para ativa não está carregada");
@@ -71,8 +78,9 @@ public class TriggerGerenciadorDeCena : MonoBehaviour
     }
     public static void InvocarSetScene(Scene scene)
     {
-        //Debug.Log(scene.name);
-        if (!SceneManager.SetActiveScene(scene))
+//        Debug.Log(scene.name);
+        SceneManager.SetActiveScene(scene);
+        if (SceneManager.GetActiveScene() != scene)
             GameController.g.StartCoroutine(setarScene(scene));
         Debug.Log("nomeAtiva: " + SceneManager.GetActiveScene().name);
     }

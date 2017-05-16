@@ -13,6 +13,11 @@ public class GolpeBase : IGolpeBase
         this.container = container;
     }
 
+    public float ColisorScale
+    {
+        get { return container.colisorScale; }
+    }
+
     public caracGolpe Caracteristica
     {
         get

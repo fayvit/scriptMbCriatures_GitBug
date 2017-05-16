@@ -22,6 +22,17 @@ public class KeyVar
         get { return cenasAtivas; }
     }
 
+    public void SetarCenasAtivas(NomesCenas[] cenasAtivas)
+    {
+        this.cenasAtivas = new List<NomesCenas>();
+        for (int i = 0; i < cenasAtivas.Length; i++)
+        {
+            this.cenasAtivas.AddRange(cenasAtivas);
+        }
+
+        cenaAtiva = cenasAtivas[0];
+    }
+
     public void SetarCenasAtivas()
     {
         NomesCenas[] nomesDeCenas = (NomesCenas[])(System.Enum.GetValues(typeof(NomesCenas)));

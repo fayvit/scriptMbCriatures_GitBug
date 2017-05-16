@@ -1,33 +1,41 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
 public class LoadAndSaveGame
 {
-    private int indiceDoJogoAtualSelecionado = 0;
+    public int indiceDoJogoAtualSelecionado = 0;
+
+    public void SalvarArquivo(string nomeArquivo,object conteudo)
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+
+        FileStream file = File.Create(Application.persistentDataPath+"/"+nomeArquivo);
+        bf.Serialize(file, conteudo);
+
+        file.Close();
+    }
 
     public void Save(SaveDates paraSalvar)
     {
-
-        BinaryFormatter bf = new BinaryFormatter();
-
-        FileStream file = File.Create(Application.persistentDataPath + "/criatures.ori"+indiceDoJogoAtualSelecionado);
-        bf.Serialize(file, paraSalvar);
-
-        file.Close();
+        SalvarArquivo("criatures.ori" + indiceDoJogoAtualSelecionado,paraSalvar);
+        
     }
 
     public SaveDates Load(int indice)
     {
         indiceDoJogoAtualSelecionado = indice;
-        SaveDates retorno = null;
-        if (File.Exists(Application.persistentDataPath + "/criatures.ori" + indiceDoJogoAtualSelecionado))
+        return (SaveDates)(CarregarArquivo("criatures.ori" + indice));
+    }
+
+    public object CarregarArquivo(string nomeArquivo)
+    {
+        object retorno = null;
+        if (File.Exists(Application.persistentDataPath+"/"+nomeArquivo))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/criatures.ori" + indiceDoJogoAtualSelecionado, FileMode.Open);
-            retorno = (SaveDates)bf.Deserialize(file);
+            FileStream file = File.Open(Application.persistentDataPath+"/"+nomeArquivo, FileMode.Open);
+            retorno = bf.Deserialize(file);
             file.Close();
         }
 

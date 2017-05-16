@@ -16,12 +16,12 @@ public class MbDentada : ImpactoAereoBase
         potenciaMinima = 1,
         tempoDeReuso = 3.5f,
         TempoNoDano = 0.5f,
-        velocidadeDeGolpe = 28f,
+        velocidadeDeGolpe = 18f,
         distanciaDeRepulsao = 65f,
-        velocidadeDeRepulsao = 33,
-        tempoDeMoveMin = 0.35f,//74
-        tempoDeMoveMax = 1.2f,
-        tempoDeDestroy = 1.4f
+        velocidadeDeRepulsao = 66,
+        tempoDeMoveMin = 0.65f,//74
+        tempoDeMoveMax = 1.3f,
+        tempoDeDestroy = 1.5f
     }
         )
     {
@@ -29,7 +29,7 @@ public class MbDentada : ImpactoAereoBase
             NoImpacto.impactoComum,
             Trails.dentada,
             ToqueAoChao.impactoAoChao,
-            PreparaSalto.preparaImpactoAoChao,
+            PreparaSalto.impactoBaixo,
             ImpactoAereoFinal.AvanceEPareAbaixo
             );
 

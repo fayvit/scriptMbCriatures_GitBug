@@ -88,7 +88,7 @@ public class ApresentaDerrota
                     manager.transform.position = manager.Dados.UltimoArmagedom.posHeroi;
                     manager.transform.rotation = Quaternion.identity;
                     manager.Dados.TodosCriaturesPerfeitos();
-                    GameController.g.Salvador.SalvarAgora();
+                    GameController.g.Salvador.SalvarAgora(new NomesCenas[1] { manager.Dados.UltimoArmagedom.NomeDaCena});
                     UnityEngine.SceneManagement.SceneManager.LoadScene("testeCarregamento");
                 }
             break;

@@ -28,7 +28,7 @@ public class ProjetilBase : GolpeBase
     {
 
         tempoDecorrido += Time.deltaTime;
-        if (!addView && tempoDecorrido > this.TempoDeMoveMin)
+        if (!addView )
         {
             addView = true;
             AplicadorDeProjeteis.AplicaProjetil(G, this, carac);

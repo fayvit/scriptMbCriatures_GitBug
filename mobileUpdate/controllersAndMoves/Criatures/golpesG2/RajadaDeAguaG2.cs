@@ -48,14 +48,18 @@ public class RajadaDeAguaG2 : GolpeBase
 
     public override void UpdateGolpe(GameObject G)
     {
+        tempoDecorrido += Time.deltaTime;
         if (!addView)
         {
+            GolpePersonagem golpeP = GolpePersonagem.RetornaGolpePersonagem(G, Nome);
+            if (golpeP.TempoDeInstancia > 0)
+                posInicial = Emissor.UseOEmissor(G, Nome);
             AuxiliarDeInstancia.InstancieEDestrua(Nome, posInicial, DirDeREpulsao, TempoDeDestroy);
             addView = true;
         }
 
         hit = new RaycastHit();
-        tempoDecorrido += Time.deltaTime;
+        
         Vector3 ort = Vector3.Cross(DirDeREpulsao, Vector3.up).normalized;
 
         float deslocadorInicial = tempoDecorrido > 1 ? tempoDecorrido : 1;

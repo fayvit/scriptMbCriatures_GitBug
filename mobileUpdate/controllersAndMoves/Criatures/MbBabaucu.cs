@@ -30,7 +30,7 @@ public class MbBabaucu
                 ModPersonagem = 0,
                 Colisor = new colisor("esqueleto/corpo/",
                                               new Vector3(0,0,1.2f),
-                                              new Vector3(-0.365f,0.113f,-0.325f)),
+                                              new Vector3(0.181f,0f,0.075f)),
                 Nome = nomesGolpes.sobreSalto,
                 TaxaDeUso = 0.5f,
                 DistanciaEmissora = 0.5f

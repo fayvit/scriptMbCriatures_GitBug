@@ -28,4 +28,10 @@ public class SaveManager
         loadSave.Save(new SaveDates());
         tempoDecorrido = 0;
     }
+
+    public void SalvarAgora(NomesCenas[] cenasAtivas)
+    {
+        loadSave.Save(new SaveDates(cenasAtivas));
+        tempoDecorrido = 0;
+    }
 }

@@ -16,8 +16,8 @@ public class bastao:golpe{
 		TempoNoDano = 0.25f;  //Tempo que o inimigo permanece na animacao de Dano
 		RepulsaoDoDano = 55f; // forca com que o inimigo e lançado longe durante o golpe
 		CaracGolpe = caracGolpe.colisao;
-		tempoMoveMin = 0.25f;
-		tempoMoveMax = 0.5f;
+		tempoMoveMin = 0.35f;
+		tempoMoveMax = 0.65f;
 		tempoDestroy = 1;
 		
 	}

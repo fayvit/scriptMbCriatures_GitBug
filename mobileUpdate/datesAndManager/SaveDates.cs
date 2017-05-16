@@ -8,11 +8,24 @@ public class SaveDates
     private float[] posicao;
     private float[] rotacao;
 
+    public SaveDates(NomesCenas[] cenasAtivas)
+    {
+        SetarSaveDates();
+        variaveisChave.SetarCenasAtivas(cenasAtivas);
+     
+    }
     public SaveDates()
+    {
+        SetarSaveDates();
+        variaveisChave.SetarCenasAtivas();
+        
+    }
+
+    private void SetarSaveDates()
     {
         CharacterManager manager = GameController.g.Manager;
         variaveisChave = GameController.g.MyKeys;
-        variaveisChave.SetarCenasAtivas();
+        
         dados = manager.Dados;
 
         Vector3 X = manager.transform.position;

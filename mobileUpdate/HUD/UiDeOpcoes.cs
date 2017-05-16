@@ -21,6 +21,8 @@ public abstract class UiDeOpcoes
             RedimensionarUI.NaVertical(painelDeTamanhoVariavel, itemDoContainer, quantidade);
         else if(tipo==TipoDeRedimensionamento.emGrade)
             RedimensionarUI.EmGrade(painelDeTamanhoVariavel, itemDoContainer, quantidade);
+        else if(tipo==TipoDeRedimensionamento.horizontal)
+            RedimensionarUI.NaHorizontal(painelDeTamanhoVariavel, itemDoContainer, quantidade);
 
         for (int i = 0; i < quantidade; i++)
         {
@@ -33,7 +35,11 @@ public abstract class UiDeOpcoes
         if (sr != null)
             if (sr.verticalScrollbar)
                 sr.verticalScrollbar.value = 1;
-        GameController.g.StartCoroutine(ScrollPos());
+
+        if (GameController.g)
+            GameController.g.StartCoroutine(ScrollPos());
+        else
+            GameObject.FindObjectOfType<InitialSceneManager>().StartCoroutine(ScrollPos());
         
     }
 
@@ -44,7 +50,11 @@ public abstract class UiDeOpcoes
         if (sr != null)
             if (sr.verticalScrollbar)
                 sr.verticalScrollbar.value = 1;
-        
+
+
+        if (sr != null)
+            if (sr.horizontalScrollbar)
+                sr.horizontalScrollbar.value = 0;
     }
 
     public void FinalizarHud()

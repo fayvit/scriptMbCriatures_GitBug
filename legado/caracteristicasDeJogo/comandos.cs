@@ -40,6 +40,9 @@ public class comandos :MonoBehaviour{
 		case "h.m.s.ms":
 			retorno = h+"h"+m+"min"+s+"s"+ms+"ms";
 		break;
+        case "s":
+                retorno = (s+60*m).ToString();
+        break;
 		}
 
 		return retorno;

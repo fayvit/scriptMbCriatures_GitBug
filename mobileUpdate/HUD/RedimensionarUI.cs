@@ -10,6 +10,12 @@ public class RedimensionarUI
             = new Vector2(0, num * item.GetComponent<LayoutElement>().preferredHeight);
     }
 
+    public static void NaHorizontal(RectTransform redimensionado, GameObject item, int num)
+    {
+        redimensionado.sizeDelta
+            = new Vector2( num * item.GetComponent<LayoutElement>().preferredWidth,0);
+    }
+
     public static void EmGrade(RectTransform redimensionado, GameObject item, int num)
     {
         LayoutElement lay = item.GetComponent<LayoutElement>();
@@ -26,5 +32,6 @@ public class RedimensionarUI
 public enum TipoDeRedimensionamento
 {
     vertical,
-    emGrade
+    emGrade,
+    horizontal
 }
