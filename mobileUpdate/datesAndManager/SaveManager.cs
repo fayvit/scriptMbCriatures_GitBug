@@ -7,6 +7,11 @@ public class SaveManager
     private LoadAndSaveGame loadSave = new LoadAndSaveGame();
     private const float INTERVALO_DE_SAVE = 60;
 
+    public void SetarJogoAtual(int qual)
+    {
+        loadSave.indiceDoJogoAtualSelecionado = qual;
+    }
+
     // Use this for initialization
     void Start()
     {

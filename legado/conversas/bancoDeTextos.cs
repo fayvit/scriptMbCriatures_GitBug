@@ -2418,5 +2418,6 @@ public enum ChaveDeTexto
     shopBasico,
     frasesDeShoping,
     comprarOuVender,
-    textosParaQuantidadesEmShop
+    textosParaQuantidadesEmShop,
+    certezaExcluir
 }

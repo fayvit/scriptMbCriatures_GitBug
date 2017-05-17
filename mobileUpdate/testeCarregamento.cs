@@ -95,6 +95,7 @@ public class testeCarregamento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         tempo += Time.fixedDeltaTime;
 
         float progresso = 0;

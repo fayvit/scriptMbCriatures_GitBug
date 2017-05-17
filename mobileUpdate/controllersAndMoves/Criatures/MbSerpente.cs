@@ -34,6 +34,15 @@ public class MbSerpente
                 AcimaDoChao = 0.15f,
                 TaxaDeUso = 1.25f,
                 TempoDeInstancia = 0.1f
+            },
+            new GolpePersonagem()
+            {
+                Nome = nomesGolpes.tempestadeDeFolhas,
+                NivelDoGolpe = 8,
+                Colisor = new colisor("esqueleto/centroReverso",
+                                                            new Vector3(0,0f,0),
+                                                            new Vector3(0,0,0)),
+                TaxaDeUso = 1.25f
             }
         };
 

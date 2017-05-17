@@ -33,6 +33,15 @@ public class FlorestG2
                 DistanciaEmissora = 1f,
                 AcimaDoChao = 0.15f,
                 TaxaDeUso = 1.25f
+            },
+            new GolpePersonagem()
+            {
+                Nome = nomesGolpes.tempestadeDeFolhas,
+                NivelDoGolpe = 9,
+                Colisor = new colisor("Arma__o/corpo",
+                                                   new Vector3(0,0,0.3f),
+                                                   new Vector3(0,0,0f)),
+                TaxaDeUso = 1.25f
             }
         };
 

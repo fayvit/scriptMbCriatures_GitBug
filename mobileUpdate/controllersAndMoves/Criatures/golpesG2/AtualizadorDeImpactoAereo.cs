@@ -52,11 +52,9 @@ public class AtualizadorDeImpactoAereo
                 if (alvoProcurado != null)
                     ativa.DirDeREpulsao = (Vector3.ProjectOnPlane(alvoProcurado.position - G.transform.position,Vector3.up)).normalized;
             }
-
-            if (!adview)
-            {
-                ColisorDeGolpe.AdicionaOColisor(G, ativa, caracteristica.deImpacto, tempoDecorrido);
-            }
+            
+            ColisorDeGolpe.AdicionaOColisor(G, ativa, caracteristica.deImpacto, tempoDecorrido);
+            
 
             adview = true;
             AnimadorCriature.AnimaAtaque(G, ativa.Nome.ToString());

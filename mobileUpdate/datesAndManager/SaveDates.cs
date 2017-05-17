@@ -10,14 +10,23 @@ public class SaveDates
 
     public SaveDates(NomesCenas[] cenasAtivas)
     {
-        SetarSaveDates();
-        variaveisChave.SetarCenasAtivas(cenasAtivas);
+        if (GameController.g)
+            if (GameController.g.Manager)
+            {
+                SetarSaveDates();
+                variaveisChave.SetarCenasAtivas(cenasAtivas);
+            }
      
     }
+
     public SaveDates()
     {
-        SetarSaveDates();
-        variaveisChave.SetarCenasAtivas();
+        if (GameController.g)
+            if (GameController.g.Manager)
+            {
+                SetarSaveDates();
+                variaveisChave.SetarCenasAtivas();
+            }
         
     }
 

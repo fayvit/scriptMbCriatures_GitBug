@@ -94,6 +94,9 @@
             case nomesGolpes.chifre:
                 retorno = new MbChifre();
             break;
+            case nomesGolpes.tempestadeDeFolhas:
+                retorno = new MbTespestadeDeFolhas();
+            break;
             default:
                 retorno = new GolpeBase(new ContainerDeCaracteristicasDeGolpe());
             break;

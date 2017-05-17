@@ -183,6 +183,12 @@ public static class TextosChaveEmPT_BR
                 "A quantidade mínima que você pode comprar é 1",
                 "A quantidade mínima que você pode vender é 1"
             }
+        },
+        { 
+            ChaveDeTexto.certezaExcluir,new List<string>()
+            {
+                "Tem certeza que deseja excluir o Save {0} ?"
+            }
         }
             };
 }

@@ -4,8 +4,9 @@ using System.Collections;
 public class pretoMorte : MonoBehaviour {
 
 	private float lerp = 0;
+    public float vel = 1;
 	public bool entrando = true;
-
+    
 	public Color cor = Color.black; 
 
 	// Use this for initialization
@@ -21,9 +22,10 @@ public class pretoMorte : MonoBehaviour {
 	void OnGUI()
 	{
 		if(entrando)
-			lerp = Mathf.Lerp(lerp,1,Time.deltaTime);
+			lerp = Mathf.Lerp(lerp,1,vel*Time.fixedDeltaTime);
 		else
-			lerp = Mathf.Lerp(lerp,0,0.5f*Time.deltaTime);
+			lerp = Mathf.Lerp(lerp,0,0.5f*vel*Time.fixedDeltaTime);
+
 		GUIStyle verm = new GUIStyle (GUI.skin.box);
 		Texture2D vermelha = new Texture2D (10, 10);
 		for(int i=0;i<20;i++)

@@ -99,7 +99,7 @@ public class NPCdeConversa
         destrutivel = Destrutivel;
         siga.PareAgora();
         GameController.g.HudM.DisparaT.IniciarDisparadorDeTextos();
-        GameController.g.HudM.Botaozao.IniciarBotao(FinalizaConversa, "Cale a boca!");
+        GameController.g.HudM.Botaozao.IniciarBotao(FinalizaConversa, "Obrigado, mas estou com pressa");
         estado = EstadoDoNPC.conversando;
     }
 }

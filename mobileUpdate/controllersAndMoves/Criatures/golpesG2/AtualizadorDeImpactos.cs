@@ -85,7 +85,8 @@ public enum Trails
     umCuboETrail,
     tresCubos,
     doisCubos,
-    dentada
+    dentada,
+    tempestadeDeFolhas
 }
 
 public enum NoImpacto

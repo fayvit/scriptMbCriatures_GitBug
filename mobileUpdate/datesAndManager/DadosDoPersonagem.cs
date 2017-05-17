@@ -57,7 +57,7 @@ public class DadosDoPersonagem
              //new CriatureBase(nomesCriatures.Arpia,2),
               //new CriatureBase(nomesCriatures.PolyCharm,1),              
              //new CriatureBase(nomesCriatures.Serpente,2),
-             new CriatureBase(nomesCriatures.Xuash,2),
+             new CriatureBase(nomesCriatures.Florest,10),
         };
 
         //CriaturesAtivos[1].CaracCriature.meusAtributos.PV.Corrente = 0;

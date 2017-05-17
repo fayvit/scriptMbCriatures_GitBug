@@ -6,6 +6,14 @@ public class LoadAndSaveGame
 {
     public int indiceDoJogoAtualSelecionado = 0;
 
+    public void ExcluirArquivo(string nomeArquivo)
+    {
+        if (File.Exists(Application.persistentDataPath + "/" + nomeArquivo))
+        {
+            File.Delete(Application.persistentDataPath + "/" + nomeArquivo);
+        }
+    }
+
     public void SalvarArquivo(string nomeArquivo,object conteudo)
     {
         BinaryFormatter bf = new BinaryFormatter();
@@ -18,6 +26,7 @@ public class LoadAndSaveGame
 
     public void Save(SaveDates paraSalvar)
     {
+        Debug.Log(indiceDoJogoAtualSelecionado);
         SalvarArquivo("criatures.ori" + indiceDoJogoAtualSelecionado,paraSalvar);
         
     }
