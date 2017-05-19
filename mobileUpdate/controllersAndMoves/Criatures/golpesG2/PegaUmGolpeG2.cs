@@ -13,7 +13,6 @@
             case nomesGolpes.turboDeAgua:
                 retorno = new TurboDeAguaG2();
             break;
-
             case nomesGolpes.tapa:
                 retorno = new TapaG2();
             break;
@@ -96,6 +95,18 @@
             break;
             case nomesGolpes.tempestadeDeFolhas:
                 retorno = new MbTespestadeDeFolhas();
+            break;
+            case nomesGolpes.eletricidade:
+                retorno = new MbEletricidade();
+            break;
+            case nomesGolpes.eletricidadeConcentrada:
+                retorno = new MbEletricidadeConcentrada();
+            break;
+            case nomesGolpes.tempestadeEletrica:
+                retorno = new MbTempestadeEletrica();
+            break;
+            case nomesGolpes.hidroBomba:
+                retorno = new MbHidroBomba();
             break;
             default:
                 retorno = new GolpeBase(new ContainerDeCaracteristicasDeGolpe());

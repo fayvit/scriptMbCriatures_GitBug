@@ -30,6 +30,15 @@ public class XuashG2
                 Nome = nomesGolpes.turboDeAgua,
                 TaxaDeUso = 1.25f,
                 DistanciaEmissora = 0.5f
+            },new GolpePersonagem()
+            {
+                NivelDoGolpe = 8,
+                ModPersonagem = 0,
+                Colisor = new colisor("Arma__o/Tronco",
+                                                  new Vector3(0,0,0),
+                                                  new Vector3(-0.26f,-0,0)),
+                Nome = nomesGolpes.hidroBomba,
+                TaxaDeUso = 1.25f
             }
         };
 

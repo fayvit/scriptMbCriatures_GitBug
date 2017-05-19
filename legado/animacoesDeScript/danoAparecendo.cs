@@ -14,7 +14,7 @@ public class danoAparecendo : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		transform.localScale = Vector3.zero;
-        transform.parent = atacado;
+        transform.SetParent(atacado);
 		cam = GameObject.Find("Main Camera").transform;
 		GetComponentInChildren<Text>().text = dano.ToString();
 	}

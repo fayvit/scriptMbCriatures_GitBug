@@ -53,7 +53,7 @@ public class AtualizadorDeImpactoAereo
                     ativa.DirDeREpulsao = (Vector3.ProjectOnPlane(alvoProcurado.position - G.transform.position,Vector3.up)).normalized;
             }
             
-            ColisorDeGolpe.AdicionaOColisor(G, ativa, caracteristica.deImpacto, tempoDecorrido);
+            ColisorDeGolpe.AdicionaOColisor(G, ativa, caracteristica.deImpacto, tempoDecorrido+ativa.TempoDeMoveMin);
             
 
             adview = true;
@@ -64,35 +64,35 @@ public class AtualizadorDeImpactoAereo
         if (adview)
         {
             if (caracteristica.final == ImpactoAereoFinal.MaisAltoQueOAlvo)
-                MaisAltoQueOAlvo(alvoProcurado, G, ativa);
+                MaisAltoQueOAlvo( G, ativa);
             else
-                AvanceEPareAbaixo(alvoProcurado, G, ativa);
+                AvanceEPareAbaixo(G, ativa);
         }
 
         if (tempoDecorrido > ativa.TempoDeMoveMax)
             nav.enabled = estavaParada;
     }
 
-    private void MaisAltoQueOAlvo(Transform alvo, GameObject G,IGolpeBase ativa)
+    private void MaisAltoQueOAlvo(GameObject G,IGolpeBase ativa)
     {
 
         Vector3 pontoAlvo = 3 * Vector3.up;
 
-        if (alvo != null)
+        if (alvoProcurado != null)
         {
-            pontoAlvo += alvo.transform.position + 3 * Vector3.up + (G.transform.position - alvo.position).normalized;
+            pontoAlvo += alvoProcurado.position + 3 * Vector3.up + (G.transform.position - alvoProcurado.position).normalized;
         }
 
 
-        Vector3 direcaoDoSalto = alvo == null 
+        Vector3 direcaoDoSalto = alvoProcurado == null 
             ? G.transform.forward + 0.6f * Vector3.up 
             : Vector3.Dot(
-                    Vector3.ProjectOnPlane(alvo.position - G.transform.position, Vector3.up),
+                    Vector3.ProjectOnPlane(alvoProcurado.position - G.transform.position, Vector3.up),
                     ativa.DirDeREpulsao) > 0 ? pontoAlvo - G.transform.position:G.transform.forward;
 
+        Debug.Log(Vector3.ProjectOnPlane(pontoAlvo - G.transform.position, Vector3.up).magnitude);
 
-
-        if (Vector3.Distance(pontoAlvo, G.transform.position) < 0.35f
+        if (Vector3.ProjectOnPlane(pontoAlvo- G.transform.position,Vector3.up).magnitude < 1f
            ||
            Mathf.Abs(posInicial.y - G.transform.position.y) > 4
            )
@@ -104,31 +104,38 @@ public class AtualizadorDeImpactoAereo
         
 
         if (Vector3.ProjectOnPlane(posInicial - G.transform.position, Vector3.up).sqrMagnitude > 25f/* distancia ao quadrado*/ &&
-            (alcancouOApceDaAltura || tempoDecorrido > ativa.TempoDeMoveMax))
+            (alcancouOApceDaAltura || tempoDecorrido > 0.75f*ativa.TempoDeMoveMax))
         {
 
             Vector3 descendo = Vector3.down;
-            if (alvo != null)
+            if (alvoProcurado != null)
             {
 
                 if (Vector3.Dot(
-                    Vector3.ProjectOnPlane(alvo.position - G.transform.position, Vector3.up),
+                    Vector3.ProjectOnPlane(alvoProcurado.position - G.transform.position, Vector3.up),
                     ativa.DirDeREpulsao) < 0)
-                {                    
+                {
                     descendo = descendo + ativa.DirDeREpulsao;
                 }
                 else
-                  descendo = descendo+  0.1f*(alvo.position - G.transform.position);
+                {
+                    float vel = 0.75f;
+                    if (G.name == "CriatureAtivo")
+                        vel = 0.1f;
+
+                    descendo = descendo + vel* (alvoProcurado.position - G.transform.position);
+                }
                 descendo.Normalize();
                 
                 G.transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(descendo, Vector3.up));
             }
+            Debug.DrawRay(G.transform.position, descendo * ativa.VelocidadeDeGolpe, Color.green, 10);
             controle.Move(descendo * ativa.VelocidadeDeGolpe * Time.deltaTime);
         }
         else
         {
 
-
+            Debug.DrawRay(G.transform.position, direcaoDoSalto.normalized * ativa.VelocidadeDeGolpe, Color.yellow, 10);
             controle.Move(direcaoDoSalto.normalized * Time.deltaTime * ativa.VelocidadeDeGolpe);
         }
 
@@ -136,22 +143,28 @@ public class AtualizadorDeImpactoAereo
     }
 
 
-    void AvanceEPareAbaixo(Transform alvo, GameObject G, IGolpeBase ativa)
+    void AvanceEPareAbaixo(GameObject G, IGolpeBase ativa)
     {
         float distanciaDeParada = 5.75f;
         float velocidadeAvante = ativa.VelocidadeDeGolpe;
 
         Vector3 V = posInicial+10*ativa.DirDeREpulsao;
         Vector3 project;
-        if (alvo)
+        if (alvoProcurado)
         {
-            V = alvo.position;
-            project = (Vector3.ProjectOnPlane(G.transform.position - V, Vector3.up));
+            V = alvoProcurado.position;
+           // project = (Vector3.ProjectOnPlane(G.transform.position - V, Vector3.up));
           //  if (Vector3.Dot(project,G.transform.forward)>0)
             //    AtualizadorDeImpactos.ajudaAtaque(alvo, G.transform);
         }
 
         project = (Vector3.ProjectOnPlane(G.transform.position - V, Vector3.up));
+
+        if (Vector3.Dot(project, G.transform.forward) > 0)
+            G.transform.rotation = Quaternion.LookRotation(-project);
+        else
+            G.transform.rotation = Quaternion.LookRotation(ativa.DirDeREpulsao);
+
 
         if ((project.magnitude > distanciaDeParada
             &&
@@ -165,8 +178,11 @@ public class AtualizadorDeImpactoAereo
         }
         else if (project.magnitude <= distanciaDeParada)
         {
-            
-            dirDeslocamento = Vector3.Lerp(dirDeslocamento, velocidadeAvante * G.transform.forward + Vector3.down * 9.8f, 20 * Time.deltaTime);
+            Vector3 foco = velocidadeAvante * G.transform.forward + Vector3.down * 9.8f;
+            if (alvoProcurado && Vector3.Dot(-project, G.transform.forward) > 0)
+                foco = velocidadeAvante * (alvoProcurado.position - G.transform.position).normalized+18.8f*Vector3.down;
+
+            dirDeslocamento = Vector3.Lerp(dirDeslocamento, foco, 20 * Time.deltaTime);
             alcancouOApceDaAltura = true;
         }
         else if (G.transform.position.y - posInicial.y > 4)

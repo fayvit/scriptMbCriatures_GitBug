@@ -7,7 +7,7 @@ public class IA_Agressiva : IA_Base
     private bool podeAtualizar = false;
 
     private const float TEMPO_DE_COOLDOWN = 2;
-    private const float MOD_DISTANCIA_DE_ATAQUE = 18;
+    private const float MOD_DISTANCIA_DE_ATAQUE = 14;
 
     public bool PodeAtualizar
     {

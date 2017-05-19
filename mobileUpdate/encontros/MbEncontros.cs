@@ -136,8 +136,8 @@ public class MbEncontros
 
     protected virtual List<encontravel> listaEncontravel()
     {
-        return new List<encontravel>() { new encontravel(nomesCriatures.Florest, 1, 9, 13),
-            new encontravel(nomesCriatures.Serpente, 1, 9, 13)
+        return new List<encontravel>() { new encontravel(nomesCriatures.Xuash, 1, 9, 13),
+            new encontravel(nomesCriatures.Steal, 1, 9, 13)
         };
         /*
         return new List<encontravel>() { new encontravel(nomesCriatures.PolyCharm,1,11,13),

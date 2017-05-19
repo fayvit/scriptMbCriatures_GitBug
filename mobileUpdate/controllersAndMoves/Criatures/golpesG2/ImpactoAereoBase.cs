@@ -21,7 +21,7 @@ public class ImpactoAereoBase : GolpeBase
 
         GameObject instancia = elementosDoJogo.el.retorna(carac.prepara.ToString());
         MonoBehaviour.Destroy(
-        MonoBehaviour.Instantiate(instancia, G.transform.position, instancia.transform.rotation), 5);
+        MonoBehaviour.Instantiate(instancia, G.transform.position, Quaternion.LookRotation(G.transform.forward)), 5);
     }
 
     public override void UpdateGolpe(GameObject G)
@@ -93,5 +93,8 @@ public enum PreparaSalto
 {
     nulo,
     preparaImpactoAoChao,
-    impactoBaixo
+    impactoBaixo,
+    impactoBaixoDeFolhas,
+    preparaImpactoDeAguaAoChao,
+    eletricidadeAoChao
 }

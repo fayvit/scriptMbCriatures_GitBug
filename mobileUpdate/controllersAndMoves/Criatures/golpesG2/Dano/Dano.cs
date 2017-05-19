@@ -25,19 +25,18 @@ public class Dano
 
     public static void VerificaDano(GameObject atacado,GameObject atacante,IGolpeBase golpe)
     {
-        Vector3 dirDano = golpe.DirDeREpulsao;
         CreatureManager GdC = atacado.GetComponent<CreatureManager>();
         if (GdC && !GameController.g.UsandoItemOuTrocandoCriature)
         {
             if (GdC.MeuCriatureBase.CaracCriature.meusAtributos.PV.Corrente > 0)
             {
-                AplicaDano(GdC,atacante,golpe,dirDano);
+                AplicaDano(GdC,atacante,golpe);
                 VerificaComportamentoDeIA(GdC,atacante);
             }
         }
     }
 
-    public static void AplicaDano(CreatureManager doAtacado,GameObject atacante,IGolpeBase golpe,Vector3 dirDano)
+    public static void AplicaDano(CreatureManager doAtacado,GameObject atacante,IGolpeBase golpe)
     {
         doAtacado.Estado = CreatureManager.CreatureState.emDano;
         //Transform T = doAtacado.transform;
@@ -54,7 +53,6 @@ public class Dano
         eED.esseGolpe = golpe;
         eED.animator = animatorDoAtacado;
         eED.gerente = doAtacado;
-        eED.direcaoDoDano = dirDano;
 
         VerificaVida(atacante,doAtacado,animatorDoAtacado);
     }

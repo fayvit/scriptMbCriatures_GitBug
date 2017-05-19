@@ -15,21 +15,21 @@ public class MbTespestadeDeFolhas : ImpactoAereoBase
         potenciaMaxima = 14,
         potenciaMinima = 3,
         tempoDeReuso = 8.5f,
-        TempoNoDano = 0.5f,
-        velocidadeDeGolpe = 18f,
+        TempoNoDano = 0.75f,
+        velocidadeDeGolpe = 20f,
         distanciaDeRepulsao = 65f,
         velocidadeDeRepulsao = 33,
         tempoDeMoveMin = 0.65f,//74
         tempoDeMoveMax = 1.3f,
-        tempoDeDestroy = 0.85f
+        tempoDeDestroy = 1.45f
     }
         )
     {
         carac = new CaracteristicasDeImpactoComSalto(
-            NoImpacto.impactoComum,
+            NoImpacto.impactoDeFolhas,
             Trails.tempestadeDeFolhas,
             ToqueAoChao.impactoAoChao,
-            PreparaSalto.preparaImpactoAoChao,
+            PreparaSalto.impactoBaixoDeFolhas,
             ImpactoAereoFinal.AvanceEPareAbaixo,
             false
             )

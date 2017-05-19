@@ -19,6 +19,7 @@ public class MbNessei
             {
                 Nome = nomesGolpes.chicoteDeCalda,
                 NivelDoGolpe = 1,
+                ModPersonagem = 1,
                 Colisor = new colisor("esqueleto/centroReverso/r1/r2/r3/rabo",
                                                   new Vector3(0,0f,0),
                                                   new Vector3(-0.093f,0.135f,-0.37f)),
@@ -26,12 +27,21 @@ public class MbNessei
             },new GolpePersonagem()
             {
                 NivelDoGolpe = 2,
-                ModPersonagem = 2,
+                ModPersonagem = 3,
                 Colisor = new colisor("esqueleto/centro/c1/c2/c3/cabeca/bocaB"),
                 Nome = nomesGolpes.turboDeAgua,
                 TaxaDeUso = 1.25f,
                 DistanciaEmissora = 0.5f,
                 TempoDeInstancia = 0.15f
+            },new GolpePersonagem()
+            {
+                NivelDoGolpe = 8,
+                ModPersonagem = 3,
+                Colisor = new colisor("esqueleto/centroReverso",
+                                                            new Vector3(0,0f,0),
+                                                            new Vector3(0,0,-0.66f)),
+                Nome = nomesGolpes.hidroBomba,
+                TaxaDeUso = 1.25f
             }
         };
 

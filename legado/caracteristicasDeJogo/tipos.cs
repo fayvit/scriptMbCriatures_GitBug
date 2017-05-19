@@ -174,7 +174,25 @@ public class tipos  {
                         new tipos (){ Nome = nomeTipos.Voador.ToString(),  Mod = 0.75f},
                         new tipos (){ Nome = nomeTipos.Gas.ToString(),     Mod = 0.5f},
                     };
-                break;
+            break;
+            case nomeTipos.Eletrico:
+                retorno = new tipos[]
+                    {
+                        new tipos (){ Nome = nomeTipos.Agua.ToString(),    Mod = 0.75f},
+                        new tipos (){ Nome = nomeTipos.Fogo.ToString(),    Mod = 1f},
+                        new tipos (){ Nome = nomeTipos.Planta.ToString(),  Mod = 1.25f},
+                        new tipos (){ Nome = nomeTipos.Gelo.ToString(),    Mod = 1f},
+                        new tipos (){ Nome = nomeTipos.Terra.ToString(),   Mod = 1.5f},
+                        new tipos (){ Nome = nomeTipos.Pedra.ToString(),   Mod = 1.75f},
+                        new tipos (){ Nome = nomeTipos.Psiquico.ToString(),Mod = 1.5f},
+                        new tipos (){ Nome = nomeTipos.Eletrico.ToString(),Mod = 0.75f},
+                        new tipos (){ Nome = nomeTipos.Normal.ToString(),  Mod = 1f},
+                        new tipos (){ Nome = nomeTipos.Veneno.ToString(),  Mod = 1f},
+                        new tipos (){ Nome = nomeTipos.Inseto.ToString(),  Mod = 1f},
+                        new tipos (){ Nome = nomeTipos.Voador.ToString(),  Mod = 0.75f},
+                        new tipos (){ Nome = nomeTipos.Gas.ToString(),     Mod = 1f},
+                    };
+            break;
         }
         return retorno;
     }

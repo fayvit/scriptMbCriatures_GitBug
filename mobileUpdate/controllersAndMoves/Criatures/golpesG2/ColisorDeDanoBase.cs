@@ -44,7 +44,7 @@ public class ColisorDeDanoBase : MonoBehaviour
 
     }
 
-    protected void facaImpacto(GameObject emQ, bool colocaImpactos = false, bool destroiAqui = true, bool noTransform = false)
+    protected void facaImpacto(GameObject emQ, bool destroiAqui = true, bool noTransform = false)
     {
         /*
         Precisaser reformulado

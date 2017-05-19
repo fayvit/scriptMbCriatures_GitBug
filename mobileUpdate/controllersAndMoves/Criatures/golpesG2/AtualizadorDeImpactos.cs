@@ -86,7 +86,9 @@ public enum Trails
     tresCubos,
     doisCubos,
     dentada,
-    tempestadeDeFolhas
+    tempestadeDeFolhas,
+    tempestadeEletrica,
+    hidroBomba
 }
 
 public enum NoImpacto
@@ -99,5 +101,6 @@ public enum NoImpacto
     impactoDeGosma,
     impactoDeGosmaAcida,
     impactoVenenoso,
-    impactoDePedra
+    impactoDePedra,
+    impactoEletrico
 }

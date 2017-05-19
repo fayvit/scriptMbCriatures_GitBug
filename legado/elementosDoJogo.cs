@@ -133,7 +133,8 @@ public enum DoJogo
     acaoDeCura1,
     particulasCoisasBoasUI,
     particulasUpeiDeNivel,
-    encontro
+    encontro,
+    raioEletrico
 }
 
 /// <summary>

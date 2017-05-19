@@ -4,19 +4,20 @@ using System.Collections;
 public class EstouEmDano : MonoBehaviour
 {
 
-    private float tempoNoDano ;
     private float tempoDeDano = 0;
     private float alturaAtual;
     private float alturaDoDano;
     private Vector3 direcao = Vector3.zero;
+    private Vector3 vMove = Vector3.zero;
     private Vector3 posInicial;
     
+
     private CharacterController controle;
 
     public IGolpeBase esseGolpe;
     public Animator animator;
     public CreatureManager gerente;
-    public Vector3 direcaoDoDano = Vector3.back;
+    //public Vector3 direcaoDoDano = Vector3.back;
 
     // Use this for initialization
     void Start()
@@ -24,7 +25,6 @@ public class EstouEmDano : MonoBehaviour
         controle = GetComponent<CharacterController>();
         posInicial = transform.position;
         alturaDoDano = transform.position.y;
-        tempoNoDano = esseGolpe.TempoNoDano; 
         
     }
 
@@ -40,12 +40,12 @@ public class EstouEmDano : MonoBehaviour
             direcao += 12 * Vector3.up;
         }
         if ((transform.position - posInicial).sqrMagnitude < esseGolpe.DistanciaDeRepulsao)
-            direcao += esseGolpe.VelocidadeDeRepulsao * direcaoDoDano;
+            direcao += esseGolpe.VelocidadeDeRepulsao * esseGolpe.DirDeREpulsao;//direcaoDoDano;
 
         vMove = Vector3.Lerp(vMove, direcao, 10 * Time.deltaTime);
         controle.Move(vMove * Time.deltaTime);
 
-        if (tempoDeDano > tempoNoDano)
+        if (tempoDeDano > esseGolpe.TempoNoDano)
         {
 
             gerente.LiberaMovimento(CreatureManager.CreatureState.emDano);    
@@ -54,5 +54,5 @@ public class EstouEmDano : MonoBehaviour
         }
     }
 
-    Vector3 vMove = Vector3.zero;
+    
 }
