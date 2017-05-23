@@ -10,6 +10,7 @@ public class AtualizadorDeImpactoAereo
     private Transform alvoProcurado;
     private CharacterController controle;
     private NavMeshAgent nav;
+    private impactoAoChao ao;
 
     private float tempoDecorrido = 0;
     private bool adview = false;
@@ -38,36 +39,40 @@ public class AtualizadorDeImpactoAereo
         procurouAlvo = false;
     }
 
-    public void ImpactoAtivo(GameObject G, IGolpeBase ativa, CaracteristicasDeImpactoComSalto caracteristica)
+    public void ImpactoAtivo(GameObject G, IGolpeBase ativa, CaracteristicasDeImpactoComSalto caracteristica,float colocarColisor = 0)
     {
         tempoDecorrido += Time.deltaTime;
-        if (!adview)
-        {
-            if (!procurouAlvo)
-            {
-                alvoProcurado = CriaturesPerto.procureUmBomAlvo(G);
-                procurouAlvo = true;
-               // Debug.Log(alvoProcurado + "  esse é o alvo");
-                AtualizadorDeImpactos.ajudaAtaque(alvoProcurado, G.transform);
-                if (alvoProcurado != null)
-                    ativa.DirDeREpulsao = (Vector3.ProjectOnPlane(alvoProcurado.position - G.transform.position,Vector3.up)).normalized;
-            }
-            
-            ColisorDeGolpe.AdicionaOColisor(G, ativa, caracteristica.deImpacto, tempoDecorrido+ativa.TempoDeMoveMin);
-            
 
-            adview = true;
+        if (!procurouAlvo)
+        {
+            alvoProcurado = CriaturesPerto.procureUmBomAlvo(G);
+            procurouAlvo = true;
+            // Debug.Log(alvoProcurado + "  esse é o alvo");
+            AtualizadorDeImpactos.ajudaAtaque(alvoProcurado, G.transform);
+            if (alvoProcurado != null)
+                ativa.DirDeREpulsao = (Vector3.ProjectOnPlane(alvoProcurado.position - G.transform.position, Vector3.up)).normalized;
+
             AnimadorCriature.AnimaAtaque(G, ativa.Nome.ToString());
 
+            /* aproveitado da geração 1 de scripts*/
+            ao = G.AddComponent<impactoAoChao>();
+            ao.aoChao = caracteristica.toque.ToString();
+            /* ******************* */
         }
 
-        if (adview)
-        {
-            if (caracteristica.final == ImpactoAereoFinal.MaisAltoQueOAlvo)
-                MaisAltoQueOAlvo( G, ativa);
-            else
-                AvanceEPareAbaixo(G, ativa);
+        if (!adview && tempoDecorrido>colocarColisor)
+        {           
+            
+            ColisorDeGolpe.AdicionaOColisor(G, ativa, caracteristica.deImpacto, tempoDecorrido+ativa.TempoDeMoveMin);           
+
+            adview = true;
         }
+
+        if (caracteristica.final == ImpactoAereoFinal.MaisAltoQueOAlvo)
+            MaisAltoQueOAlvo( G, ativa);
+        else
+            AvanceEPareAbaixo(G, ativa);
+        
 
         if (tempoDecorrido > ativa.TempoDeMoveMax)
             nav.enabled = estavaParada;
@@ -90,9 +95,11 @@ public class AtualizadorDeImpactoAereo
                     Vector3.ProjectOnPlane(alvoProcurado.position - G.transform.position, Vector3.up),
                     ativa.DirDeREpulsao) > 0 ? pontoAlvo - G.transform.position:G.transform.forward;
 
-        Debug.Log(Vector3.ProjectOnPlane(pontoAlvo - G.transform.position, Vector3.up).magnitude);
+        //Debug.Log(Vector3.ProjectOnPlane(pontoAlvo - G.transform.position, Vector3.up).magnitude);
 
-        if (Vector3.ProjectOnPlane(pontoAlvo- G.transform.position,Vector3.up).magnitude < 1f
+        if ((Vector3.ProjectOnPlane(pontoAlvo- G.transform.position,Vector3.up).magnitude < 2f
+            &&
+            Vector3.ProjectOnPlane(posInicial - G.transform.position, Vector3.up).sqrMagnitude > 25f)
            ||
            Mathf.Abs(posInicial.y - G.transform.position.y) > 4
            )
@@ -129,13 +136,13 @@ public class AtualizadorDeImpactoAereo
                 
                 G.transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(descendo, Vector3.up));
             }
-            Debug.DrawRay(G.transform.position, descendo * ativa.VelocidadeDeGolpe, Color.green, 10);
+            //Debug.DrawRay(G.transform.position, descendo * ativa.VelocidadeDeGolpe, Color.green, 10);
             controle.Move(descendo * ativa.VelocidadeDeGolpe * Time.deltaTime);
         }
         else
         {
 
-            Debug.DrawRay(G.transform.position, direcaoDoSalto.normalized * ativa.VelocidadeDeGolpe, Color.yellow, 10);
+            //Debug.DrawRay(G.transform.position, direcaoDoSalto.normalized * ativa.VelocidadeDeGolpe, Color.yellow, 10);
             controle.Move(direcaoDoSalto.normalized * Time.deltaTime * ativa.VelocidadeDeGolpe);
         }
 
@@ -201,6 +208,12 @@ public class AtualizadorDeImpactoAereo
     {
         if (nav)
             nav.enabled = estavaParada;
+    }
+
+    public void DestruirAo()
+    {
+        if (ao)
+            MonoBehaviour.Destroy(ao,0.25f);
     }
 }
 

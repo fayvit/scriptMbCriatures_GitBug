@@ -34,6 +34,13 @@ public class MbCracler
                 DistanciaEmissora = 1f,
                 AcimaDoChao = 0.15f,
                 TaxaDeUso = 1.25f
+            },
+            new GolpePersonagem()
+            {
+                Nome = nomesGolpes.chuvaVenenosa,
+                NivelDoGolpe = 8,
+                Colisor = new colisor("",new Vector3(0,0.62f,0.21f),Vector3.zero),
+                TaxaDeUso = 1.25f
             }
         };
 

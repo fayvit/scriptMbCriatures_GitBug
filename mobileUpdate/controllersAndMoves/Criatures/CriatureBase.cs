@@ -165,6 +165,6 @@ public class CriatureBase : ICloneable
 
     public string NomeEmLinguas
     {
-        get { return NomeID.ToString(); }
+        get { return NomeID.ToString();}
     }
 }

@@ -49,7 +49,12 @@ public class CreatureManager : MonoBehaviour
 
     public MovimentacaoBasica Mov
     {
-        get { return mov; }
+        get {
+            if (mov == null)
+                SetaMov();
+            return mov;
+
+        }
     }
 
 
@@ -96,8 +101,10 @@ public class CreatureManager : MonoBehaviour
             case CreatureState.parado:
             case CreatureState.emDano:
             case CreatureState.aplicandoGolpe:
-                if (mov!=null)
-                    mov.AplicadorDeMovimentos(Vector3.zero, meuCriatureBase.CaracCriature.distanciaFundamentadora,transform);
+                if (mov != null)
+                    mov.AplicadorDeMovimentos(Vector3.zero, meuCriatureBase.CaracCriature.distanciaFundamentadora, transform);
+                else
+                    SetaMov();
             break;
             case CreatureState.seguindo:
             case CreatureState.selvagem:
@@ -116,14 +123,7 @@ public class CreatureManager : MonoBehaviour
 
                 if (mov == null)
                 {
-                    mov = new MovimentacaoBasica(
-                       meuCriatureBase.Mov, new ElementosDeMovimentacao()
-                       {
-                           animador = new AnimadorHumano(GetComponent<Animator>()),
-                           controle = GetComponent<CharacterController>(),
-                           transform = transform
-                       }
-                        );
+                    SetaMov();
                 }
                 else
                 {
@@ -132,6 +132,18 @@ public class CreatureManager : MonoBehaviour
 
             break;
         }
+    }
+
+    void SetaMov()
+    {
+        mov = new MovimentacaoBasica(
+                       meuCriatureBase.Mov, new ElementosDeMovimentacao()
+                       {
+                           animador = new AnimadorHumano(GetComponent<Animator>()),
+                           controle = GetComponent<CharacterController>(),
+                           transform = transform
+                       }
+                        );
     }
 
     Vector3 direcaoInduzida(float h, float v)

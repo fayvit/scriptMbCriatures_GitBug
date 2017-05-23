@@ -19,9 +19,9 @@ public class MbChicoteDeMao : ImpactoAereoBase
         velocidadeDeGolpe = 28f,
         distanciaDeRepulsao = 65f,
         velocidadeDeRepulsao = 33,
-        tempoDeMoveMin = 0.55f,//74
-        tempoDeMoveMax = 1.4f,
-        tempoDeDestroy = 1.6f
+        tempoDeMoveMin = 0.75f,//74
+        tempoDeMoveMax = 1.6f,
+        tempoDeDestroy = 1.8f
     }
         )
     {

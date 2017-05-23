@@ -883,7 +883,7 @@ public class bancoDeTextos{
                 {
                     "Rajada de Agua","Turbo de Agua","Bola de Fogo","Rajada de Fogo","Lamina de Folha",
                     "Furacão de Folhas","Chifre","Tapa","Garra","Chicote de mão","Dentada","Bico","Ventânia",
-                    "Ventos Cortantes","Gosma de Inseto","Gosma Acida","Chicote de Calda","Halter","Eletricidade",
+                    "Ventos Cortantes","Gosma de Inseto","Gosma Acida","Chicote de Calda","Cabeçada","Eletricidade",
                     "Eletricidade Concentrada","Agulha Venenosa","Onda Venenosa","Chute","Espada","Sobre Salto",
                     "Cascalho","Pedregulho","Rajada de Terra","Energia de Garras","Vingança da Terra","Psicose",
                     "Hidro Bomba","Bola Psiquica","Toste Ataque","Tempestade de Folhas",

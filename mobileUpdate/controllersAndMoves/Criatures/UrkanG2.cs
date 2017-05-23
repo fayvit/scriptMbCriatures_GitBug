@@ -32,6 +32,13 @@ public class UrkanG2
                 DistanciaEmissora = 1f,
                 AcimaDoChao = 0.15f,
                 TaxaDeUso = 1.25f
+            },
+            new GolpePersonagem()
+            {
+                Nome = nomesGolpes.teletransporte,
+                NivelDoGolpe = 8,
+                Colisor = new colisor(),
+                TaxaDeUso = 1.25f
             }
         };
 

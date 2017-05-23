@@ -18,4 +18,16 @@ public class CaracteristicasDeCriature
         mNivel.ParaProxNivel = mNivel.CalculaPassaNivelInicial(nivel);
 
     }
+
+    public bool TemOTipo(nomeTipos tipo)
+    {
+        bool retorno = false;
+        for (int i = 0; i < meusTipos.Length; i++)
+        {
+            if (meusTipos[i].ToString() == tipo.ToString())
+                retorno = true;
+        }
+
+        return retorno;
+    }
 }

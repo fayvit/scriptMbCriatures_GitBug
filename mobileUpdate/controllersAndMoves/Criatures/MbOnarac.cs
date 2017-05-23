@@ -33,6 +33,14 @@ public class MbOnarac
                                               new Vector3(0,0,1.2f),
                                               new Vector3(0f,0.113f,-0.292f)),
                 TaxaDeUso = 1.25f
+            },
+            new GolpePersonagem()
+            {
+                Nome = nomesGolpes.anelDoOlhar,
+                NivelDoGolpe = 8,
+                Colisor = new colisor("esqueleto/corpo/"),
+                DistanciaEmissora = 0.5f,
+                TaxaDeUso = 1.25f
             }
         };
 

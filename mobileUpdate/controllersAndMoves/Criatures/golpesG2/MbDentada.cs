@@ -19,9 +19,9 @@ public class MbDentada : ImpactoAereoBase
         velocidadeDeGolpe = 18f,
         distanciaDeRepulsao = 65f,
         velocidadeDeRepulsao = 66,
-        tempoDeMoveMin = 0.65f,//74
-        tempoDeMoveMax = 1.3f,
-        tempoDeDestroy = 1.5f
+        tempoDeMoveMin = 0.75f,//74
+        tempoDeMoveMax = 1.4f,
+        tempoDeDestroy = 1.6f
     }
         )
     {

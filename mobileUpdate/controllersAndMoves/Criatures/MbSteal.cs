@@ -60,9 +60,9 @@ public class MbSteal
                     meusAtributos = {
                     PV = { Taxa = 0.195f,},
                     PE = { Taxa = 0.205f},
-                    Ataque = { Taxa = 0.21f},
+                    Ataque = { Taxa = 0.18f},
                     Defesa = { Taxa = 0.21f},
-                    Poder = { Taxa = 0.18f}
+                    Poder = { Taxa = 0.21f}
                 },
                     contraTipos = tipos.AplicaContraTipos(nomeTipos.Eletrico)
                 },

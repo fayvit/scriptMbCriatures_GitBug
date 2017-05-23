@@ -91,7 +91,7 @@ public class Dano
     static void CalculaDano(CreatureManager doAtacado, GameObject atacante, IGolpeBase golpe)
     {
         float multiplicador = 1;
-
+        
         for (int i = 0; i < doAtacado.MeuCriatureBase.CaracCriature.contraTipos.Length; i++)
         {
             if (golpe.Tipo.ToString() == doAtacado.MeuCriatureBase.CaracCriature.contraTipos[i].Nome)
@@ -109,7 +109,65 @@ public class Dano
             :
                 Mathf.RoundToInt(A.Poder.Minimo + (A.Poder.Corrente - A.Poder.Minimo) * Random.Range(0.85f, 1));
 
-        GolpePersonagem golpePersonagem =  cDoAtacante.GerenteDeGolpes.ProcuraGolpeNaLista(cDoAtacante.NomeID, golpe.Nome);
+        GolpePersonagem golpePersonagem = cDoAtacante.GerenteDeGolpes.ProcuraGolpeNaLista(cDoAtacante.NomeID, golpe.Nome);
+
+        CalculoC(multiplicador, golpe, golpePersonagem, potenciaDoAtacante, doAtacado,cDoAtacante);
+    }
+
+    static void CalculoC(
+        float multiplicador, 
+        IGolpeBase golpe, 
+        GolpePersonagem golpePersonagem, 
+        int potenciaDoAtacante, 
+        CreatureManager doAtacado,
+        CriatureBase cDoAtacado)
+    {
+        Atributos aDoAtacado = doAtacado.MeuCriatureBase.CaracCriature.meusAtributos;
+        float rd = Random.Range(0.85f, 1);
+        int level = cDoAtacado.CaracCriature.mNivel.Nivel;
+        float STAB = 1;
+        if (cDoAtacado.CaracCriature.TemOTipo(golpe.Tipo))
+        {
+            STAB = 1.5f;
+        }
+
+        //int  dano = (int)((((((((2 * level / 5) + 2) * potenciaDoAtacante* 20*(golpe.PotenciaCorrente+golpePersonagem.ModPersonagem) )/ aDoAtacado.Defesa.Corrente)/ 50) +2) *STAB * multiplicador) *rd / 100);
+        int dano = (int)(((2*level+10)*potenciaDoAtacante*(golpe.PotenciaCorrente+golpePersonagem.ModPersonagem)/(aDoAtacado.Defesa.Corrente+250)+2)*STAB*multiplicador*rd);
+        AplicaCalculoComVIsaoDeDano(doAtacado, golpe, aDoAtacado, multiplicador, dano, 0, potenciaDoAtacante);
+    }
+
+    static void AplicaCalculoComVIsaoDeDano(CreatureManager doAtacado,
+        IGolpeBase golpe,
+        Atributos aDoAtacado,
+        float multiplicador,
+        int dano,
+        int defesa,
+        int potenciaDoAtacante)
+    {
+        AplicaCalculoDoDano(aDoAtacado, dano);
+        Debug.Log("O dano do GOlpe e " + dano + " O nome do golpe e " + golpe.Nome + " o multiplicador e" + multiplicador
+            + " A defesa do inimigo é " + defesa
+            + " A potencia original é " + potenciaDoAtacante);
+
+        GameObject visaoDeDano = elementosDoJogo.el.retorna("visaoDeDano");
+        visaoDeDano = (GameObject)MonoBehaviour.Instantiate(visaoDeDano, doAtacado.transform.position, Quaternion.identity);
+        danoAparecendo danoAp = visaoDeDano.GetComponent<danoAparecendo>();
+        danoAp.dano = dano;
+        danoAp.atacado = doAtacado.transform;
+    }
+
+    static void CalculoB(float multiplicador, IGolpeBase golpe, GolpePersonagem golpePersonagem, int potenciaDoAtacante, CreatureManager doAtacado)
+    {
+        Atributos aDoAtacado = doAtacado.MeuCriatureBase.CaracCriature.meusAtributos;
+
+        int defesa = Mathf.RoundToInt(aDoAtacado.Defesa.Corrente * Random.Range(0.85f, 1));
+        int dano = (int)(multiplicador * (golpe.PotenciaCorrente+golpePersonagem.ModPersonagem+potenciaDoAtacante/defesa));
+
+        AplicaCalculoComVIsaoDeDano(doAtacado, golpe, aDoAtacado, multiplicador, dano, defesa, potenciaDoAtacante);
+    }
+
+    static void CalculoA(float multiplicador,IGolpeBase golpe,GolpePersonagem golpePersonagem, int potenciaDoAtacante,CreatureManager doAtacado)
+    {
 
         int dano = Mathf.Abs(
             Mathf.RoundToInt(
@@ -145,16 +203,7 @@ public class Dano
 
         mostraDano(elementos, T, dano);*/
 
-        AplicaCalculoDoDano(aDoAtacado, dano);
-        Debug.Log("O dano do GOlpe e " + dano + " O nome do golpe e " + golpe.Nome + " o multiplicador e" + multiplicador
-            +" A defesa do inimigo é "+defesa
-            +" A potencia original é "+potenciaDoAtacante);
-
-        GameObject visaoDeDano = elementosDoJogo.el.retorna("visaoDeDano");
-        visaoDeDano = (GameObject)MonoBehaviour.Instantiate(visaoDeDano, doAtacado.transform.position, Quaternion.identity);
-        danoAparecendo danoAp = visaoDeDano.GetComponent<danoAparecendo>();
-        danoAp.dano = dano;
-        danoAp.atacado = doAtacado.transform;
+        AplicaCalculoComVIsaoDeDano(doAtacado, golpe, aDoAtacado, multiplicador, dano, defesa, potenciaDoAtacante);
 
         /*
         if (X.cAtributos[0].Corrente > 0)

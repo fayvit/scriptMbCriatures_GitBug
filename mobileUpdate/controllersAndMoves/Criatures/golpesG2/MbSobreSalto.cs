@@ -19,9 +19,9 @@ public class MbSobreSalto : ImpactoAereoBase
         velocidadeDeGolpe = 28f,
         distanciaDeRepulsao = 65f,
         velocidadeDeRepulsao = 33,
-        tempoDeMoveMin = 0.55f,//74
-        tempoDeMoveMax = 1.4f,
-        tempoDeDestroy = 1.5f,
+        tempoDeMoveMin = 0.75f,//74
+        tempoDeMoveMax = 1.6f,
+        tempoDeDestroy = 1.7f,
         colisorScale = 2
     }
         )

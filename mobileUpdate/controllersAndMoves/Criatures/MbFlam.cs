@@ -32,6 +32,15 @@ public class MbFlam
                 DistanciaEmissora = 1f,
                 AcimaDoChao = 0.15f,
                 TaxaDeUso = 1.25f
+            },
+            new GolpePersonagem()
+            {
+                Nome = nomesGolpes.tosteAtaque,
+                NivelDoGolpe = 8,
+                Colisor = new colisor("Esqueleto/Bone",
+                                                   new Vector3(0f,0,0),
+                                                   new Vector3(0f,0f,-0f)),
+                TaxaDeUso = 1.25f
             }
         };
 

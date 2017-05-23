@@ -30,6 +30,13 @@ public class IruinG2
                 Nome = nomesGolpes.gosmaAcida,
                 TaxaDeUso = 1.25f,
                 DistanciaEmissora = 0.5f
+            },
+            new GolpePersonagem()
+            {
+                NivelDoGolpe = 8,
+                Colisor = new colisor(),
+                Nome = nomesGolpes.multiplicar,
+                TaxaDeUso = 1.25f
             }
         };
 

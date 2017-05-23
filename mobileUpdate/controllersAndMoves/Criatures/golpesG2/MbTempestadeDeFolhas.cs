@@ -9,14 +9,14 @@ public class MbTespestadeDeFolhas : ImpactoAereoBase
     {
         nome = nomesGolpes.tempestadeDeFolhas,
         tipo = nomeTipos.Planta,
-        carac = caracGolpe.colisao,
+        carac = caracGolpe.colisaoComPow,
         custoPE = 3,
         potenciaCorrente = 7,
         potenciaMaxima = 14,
         potenciaMinima = 3,
         tempoDeReuso = 8.5f,
         TempoNoDano = 0.75f,
-        velocidadeDeGolpe = 20f,
+        velocidadeDeGolpe = 30f,
         distanciaDeRepulsao = 65f,
         velocidadeDeRepulsao = 33,
         tempoDeMoveMin = 0.65f,//74
@@ -28,7 +28,7 @@ public class MbTespestadeDeFolhas : ImpactoAereoBase
         carac = new CaracteristicasDeImpactoComSalto(
             NoImpacto.impactoDeFolhas,
             Trails.tempestadeDeFolhas,
-            ToqueAoChao.impactoAoChao,
+            ToqueAoChao.poeiraAoVento,
             PreparaSalto.impactoBaixoDeFolhas,
             ImpactoAereoFinal.AvanceEPareAbaixo,
             false

@@ -108,6 +108,42 @@
             case nomesGolpes.hidroBomba:
                 retorno = new MbHidroBomba();
             break;
+            case nomesGolpes.tosteAtaque:
+                retorno = new MbTosteAtaque();
+            break;
+            case nomesGolpes.chuvaVenenosa:
+                retorno = new MbChuvaVenenosa();
+            break;
+            case nomesGolpes.rajadaDeTerra:
+                retorno = new MbRajadaDeTerra();
+            break;
+            case nomesGolpes.vingancaDaTerra:
+                retorno = new MbVingancaDaTerra();
+            break;
+            case nomesGolpes.cortinaDeTerra:
+                retorno = new MbCortinaDeTerra();
+            break;
+            case nomesGolpes.rajadaDeGas:
+                retorno = new MbRajadaDeGas();
+            break;
+            case nomesGolpes.bombaDeGas:
+                retorno = new MbBombaDeGas();
+            break;
+            case nomesGolpes.cortinaDeFumaca:
+                retorno = new MbCortinaDeFumaca();
+            break;
+            case nomesGolpes.anelDoOlhar:
+                retorno = new MbAnelDoOlhar();
+            break;
+            case nomesGolpes.teletransporte:
+                retorno = new MbTeletransporte();
+            break;
+            case nomesGolpes.avalanche:
+                retorno = new MbAvalanche();
+            break;
+            case nomesGolpes.multiplicar:
+                retorno = new MbMultiplicar();
+            break;
             default:
                 retorno = new GolpeBase(new ContainerDeCaracteristicasDeGolpe());
             break;

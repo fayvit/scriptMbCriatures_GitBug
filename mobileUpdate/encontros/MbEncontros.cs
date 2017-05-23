@@ -136,9 +136,11 @@ public class MbEncontros
 
     protected virtual List<encontravel> listaEncontravel()
     {
-        return new List<encontravel>() { new encontravel(nomesCriatures.Xuash, 1, 9, 13),
-            new encontravel(nomesCriatures.Steal, 1, 9, 13)
+        
+        return new List<encontravel>() { //new encontravel(nomesCriatures.Nessei, 1, 8, 10),
+            new encontravel(nomesCriatures.Steal, 1, 8, 10)
         };
+        
         /*
         return new List<encontravel>() { new encontravel(nomesCriatures.PolyCharm,1,11,13),
             new encontravel(nomesCriatures.Urkan,1,11,13),
@@ -150,7 +152,13 @@ public class MbEncontros
             new encontravel(nomesCriatures.Nessei, 1, 11, 13),
             new encontravel(nomesCriatures.Cracler, 1, 11, 13),
             new encontravel(nomesCriatures.Flam, 1, 11, 13),
-            new encontravel(nomesCriatures.Rocketler, 1, 11, 13)
+            new encontravel(nomesCriatures.Rocketler, 1, 11, 13),
+            new encontravel(nomesCriatures.Aladegg, 1, 11, 13),
+            new encontravel(nomesCriatures.Steal, 1, 11, 13),
+            new encontravel(nomesCriatures.Babaucu, 1, 11, 13),
+            new encontravel(nomesCriatures.Marak, 1, 11, 13),
+            new encontravel(nomesCriatures.Escorpion, 1, 11, 13),
+            new encontravel(nomesCriatures.Baratarab, 1, 11, 13)
         };*/
     }
 

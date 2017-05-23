@@ -35,7 +35,14 @@ public class MbRocketler
                 DistanciaEmissora = 1f,
                 AcimaDoChao = 0.15f,
                 TaxaDeUso = 1.25f
-            }
+            },
+            new GolpePersonagem()
+            {
+                Nome = nomesGolpes.avalanche,
+                NivelDoGolpe = 8,
+                Colisor = new colisor("Esqueleto/hips/spine/chest/neck/head",new Vector3(-0.72f,0,0.52f),Vector3.zero),
+                TaxaDeUso = 1.25f
+}
         };
 
     public static CriatureBase Criature
@@ -57,8 +64,8 @@ public class MbRocketler
                     PV = { Taxa = 0.18f,},
                     PE = { Taxa = 0.21f},
                     Ataque = { Taxa = 0.21f},
-                    Defesa = { Taxa = 0.18f},
-                    Poder = { Taxa = 0.22f}
+                    Defesa = { Taxa = 0.22f},
+                    Poder = { Taxa = 0.18f}
                 },
                     contraTipos = tipos.AplicaContraTipos(nomeTipos.Pedra)
                 },

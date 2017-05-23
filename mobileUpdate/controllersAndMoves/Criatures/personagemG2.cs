@@ -59,6 +59,15 @@ public static class personagemG2
             case nomesCriatures.Steal:
                 retorno = MbSteal.Criature;
             break;
+            case nomesCriatures.Escorpion:
+                retorno = MbEscorpion.Criature;
+            break;
+            case nomesCriatures.Cabecu:
+                retorno = MbCabecu.Criature;
+            break;
+            case nomesCriatures.DogMour:            
+                retorno = MbDogMour.Criature;
+            break;
             default:
                 retorno = new CriatureBase();
             break;

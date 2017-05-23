@@ -52,6 +52,13 @@ public class MbBaratarab
                 Nome = nomesGolpes.gosmaAcida,
                 TaxaDeUso = 1.25f,
                 DistanciaEmissora = 0.5f
+            },
+            new GolpePersonagem()
+            {
+                Nome = nomesGolpes.multiplicar,
+                NivelDoGolpe = 8,
+                Colisor = new colisor(),
+                TaxaDeUso = 1.5f
             }
         };
 

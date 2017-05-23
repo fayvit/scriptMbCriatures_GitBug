@@ -5,6 +5,7 @@ public class poeiraAoVento : MonoBehaviour {
 	public float tempoDeRepeticao = 0.25f;
 	public string particula = "poeiraAoVento";
 	private elementosDoJogo elementos;
+
 	// Use this for initialization
 	void Start () {
 		elementos = elementosDoJogo.el;

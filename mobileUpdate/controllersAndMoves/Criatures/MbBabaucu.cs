@@ -13,8 +13,7 @@ public class MbBabaucu
                                           new Vector3(0,0,0f),
                                           new Vector3(-0.2f,0.53f,-0.13f)),
                 Nome = nomesGolpes.chicoteDeMao,
-                TaxaDeUso = 0.5f,
-                DistanciaEmissora = 0.5f
+                TaxaDeUso = 0.5f
             },
             new GolpePersonagem()
             {
@@ -32,6 +31,13 @@ public class MbBabaucu
                                               new Vector3(0,0,1.2f),
                                               new Vector3(0.181f,0f,0.075f)),
                 Nome = nomesGolpes.sobreSalto,
+                TaxaDeUso = 0.5f
+            },
+            new GolpePersonagem()
+            {
+                NivelDoGolpe = 8,
+                Colisor = new colisor("esqueleto"),
+                Nome = nomesGolpes.anelDoOlhar,
                 TaxaDeUso = 0.5f,
                 DistanciaEmissora = 0.5f
             }
@@ -47,7 +53,7 @@ public class MbBabaucu
                 CaracCriature = new CaracteristicasDeCriature()
                 {
                     meusTipos = new nomeTipos[1] { nomeTipos.Normal },
-                    distanciaFundamentadora = -0.01f,
+                    distanciaFundamentadora = 0.02f,
                     meusAtributos = {
                     PV = { Taxa = 0.19f,},
                     PE = { Taxa = 0.17f},

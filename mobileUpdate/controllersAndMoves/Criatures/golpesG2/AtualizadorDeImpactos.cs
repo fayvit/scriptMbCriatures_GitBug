@@ -88,7 +88,10 @@ public enum Trails
     dentada,
     tempestadeDeFolhas,
     tempestadeEletrica,
-    hidroBomba
+    hidroBomba,
+    tosteAtaque,
+    chuvaVenenosa,
+    avalanche
 }
 
 public enum NoImpacto
@@ -102,5 +105,7 @@ public enum NoImpacto
     impactoDeGosmaAcida,
     impactoVenenoso,
     impactoDePedra,
-    impactoEletrico
+    impactoEletrico,
+    impactoDeTerra,
+    impactoDeGas
 }

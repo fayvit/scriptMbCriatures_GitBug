@@ -33,6 +33,14 @@ public class MbMarak
                                          new Vector3(0,-0.75f,1.2f),
                                          new Vector3(-0.365f,0.113f,-0.325f)),
                 TaxaDeUso = 1.25f
+            },
+            new GolpePersonagem()
+            {
+                NivelDoGolpe = 8,
+                Colisor = new colisor("Arma__o/corpo3/corpo2/corpo1/pescoco/cabeca/"),
+                Nome = nomesGolpes.anelDoOlhar,
+                TaxaDeUso = 0.5f,
+                DistanciaEmissora = 0.5f
             }
         };
 

@@ -37,7 +37,7 @@ public class IA_Agressiva : IA_Base
 
             GolpeBase GB = gg.meusGolpes[gg.golpeEscolhido];
 
-            if (GB.Caracteristica == caracGolpe.colisao)
+            if (GB.Caracteristica == caracGolpe.colisao || GB.Caracteristica==caracGolpe.colisaoComPow)
             {
                 {
 

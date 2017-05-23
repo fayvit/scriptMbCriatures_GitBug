@@ -22,6 +22,7 @@ public class ProjetilEletricoBase : GolpeBase
         tempoDecorrido = 0;
         carac.posInicial = Emissor.UseOEmissor(G, this.Nome);
         DirDeREpulsao = G.transform.forward;
+        projeteis = new List<Transform>();
         AnimadorCriature.AnimaAtaque(G, "emissor");
     }
 

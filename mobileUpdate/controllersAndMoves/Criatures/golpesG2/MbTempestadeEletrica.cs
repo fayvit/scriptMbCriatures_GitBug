@@ -9,7 +9,7 @@ public class MbTempestadeEletrica : ImpactoAereoBase
     {
         nome = nomesGolpes.tempestadeEletrica,
         tipo = nomeTipos.Eletrico,
-        carac = caracGolpe.colisao,
+        carac = caracGolpe.colisaoComPow,
         custoPE = 3,
         potenciaCorrente = 7,
         potenciaMaxima = 14,

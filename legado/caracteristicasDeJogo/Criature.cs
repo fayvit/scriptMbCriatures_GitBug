@@ -231,7 +231,12 @@ public struct colisor
     private float colisorScale;
 
 
-	public colisor(string _osso="",Vector3 _deslColisor = default(Vector3) ,Vector3 _deslTrail = default(Vector3),float colisorScale = 1)
+    public colisor(string _osso,float colisorScale)
+    {
+        this = new colisor(_osso, Vector3.zero, Vector3.zero, colisorScale);
+    }
+
+    public colisor(string _osso="",Vector3 _deslColisor = default(Vector3) ,Vector3 _deslTrail = default(Vector3),float colisorScale = 1)
 	{
 		osso = _osso;
 		dCx = _deslColisor.x;
@@ -247,7 +252,11 @@ public struct colisor
 
     public float ColisorScale
     {
-        get { return colisorScale; }
+        get {
+            if (colisorScale == 0)
+                colisorScale = 1;
+
+            return colisorScale; }
     }
 
 	public Vector3 deslColisor

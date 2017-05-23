@@ -5,7 +5,7 @@ using System.Collections;
 public class ImpactoAereoBase : GolpeBase
 {
     protected CaracteristicasDeImpactoComSalto carac;
-    [System.NonSerialized]private AtualizadorDeImpactoAereo aImpacto = new AtualizadorDeImpactoAereo();
+    [System.NonSerialized]protected AtualizadorDeImpactoAereo aImpacto = new AtualizadorDeImpactoAereo();
 
     public ImpactoAereoBase(ContainerDeCaracteristicasDeGolpe C) : base(C) { }
 
@@ -32,6 +32,7 @@ public class ImpactoAereoBase : GolpeBase
     public override void  FinalizaEspecificoDoGolpe()
     {
         aImpacto.ReligarNavMesh();
+        aImpacto.DestruirAo();
     }
 }
 
@@ -81,12 +82,11 @@ public enum ToqueAoChao
 {
     nulo,
     impactoAoChao,
-    sobreSalto,
-    chuvaVenenosa,
     impactoDePedraAoChao,
     aguaAoChao,
-    fogoAoChao,
-    eletricidadeAoChao
+    impactoDeFogo,
+    eletricidadeAoChao,
+    poeiraAoVento
 }
 
 public enum PreparaSalto
@@ -96,5 +96,7 @@ public enum PreparaSalto
     impactoBaixo,
     impactoBaixoDeFolhas,
     preparaImpactoDeAguaAoChao,
-    eletricidadeAoChao
+    eletricidadeAoChao,
+    preparaImpactoDeFogoAoChao,
+    impulsoVenenoso
 }

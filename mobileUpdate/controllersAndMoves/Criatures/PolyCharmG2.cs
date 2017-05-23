@@ -32,6 +32,15 @@ public class PolyCharmG2
                 DistanciaEmissora = 1f,
                 AcimaDoChao = 0.15f,
                 TaxaDeUso = 1.25f
+            },
+            new GolpePersonagem()
+            {
+                Nome = nomesGolpes.tosteAtaque,
+                NivelDoGolpe = 8,
+                Colisor = new colisor("Arma__o_001/coluna1",
+                                                   new Vector3(0f,0,0),
+                                                   new Vector3(0,0,0)),
+                TaxaDeUso = 1.25f
             }
         };
 

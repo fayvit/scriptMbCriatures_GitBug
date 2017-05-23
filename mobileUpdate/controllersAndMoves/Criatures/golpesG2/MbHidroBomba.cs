@@ -9,7 +9,7 @@ public class MbHidroBomba : ImpactoAereoBase
     {
         nome = nomesGolpes.hidroBomba,
         tipo = nomeTipos.Agua,
-        carac = caracGolpe.colisao,
+        carac = caracGolpe.colisaoComPow,
         custoPE = 3,
         potenciaCorrente = 7,
         potenciaMaxima = 14,
