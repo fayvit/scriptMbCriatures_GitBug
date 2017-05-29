@@ -47,14 +47,10 @@ public class ColisorDeDanoBase : MonoBehaviour
     protected void facaImpacto(GameObject emQ, bool destroiAqui = true, bool noTransform = false)
     {
         /*
-        Precisaser reformulado
-        if (emQ.gameObject.tag == "eventoComGolpe")
+        
+        if (emQ.gameObject.tag == "eventoComGolpe" && !GameController.g.estaEmLuta)
         {
-            eventoComGolpe eCG = emQ.GetComponent<eventoComGolpe>();
-            acaoDeGolpe aG2 = dono.GetComponent<acaoDeGolpe>();
-            if (eCG && aG2)
-                eCG.disparaEvento(aG2.ativa.nomeID);
-
+            emQ.GetComponent<EventoComGolpe>().DisparaEvento(esseGolpe.Nome);
         }*/
 
         GameObject impacto = elementosDoJogo.el.retorna(noImpacto);
@@ -63,11 +59,11 @@ public class ColisorDeDanoBase : MonoBehaviour
         if (!noTransform)
             impacto = (GameObject)Instantiate(impacto, transform.position, Qparticles);
 
-        if (emQ.tag == "Criature")
-        {
-            Atributos A = emQ.GetComponent<CreatureManager>().MeuCriatureBase.CaracCriature.meusAtributos;
-            if (A!=null)
-                if (A.PV.Corrente > 0)
+       // if (emQ.tag == "Criature")
+        //{
+           // Atributos A = emQ.GetComponent<CreatureManager>().MeuCriatureBase.CaracCriature.meusAtributos;
+            //if (A!=null)
+              //  if (A.PV.Corrente > 0)
 
                     Dano.VerificaDano(emQ, dono, esseGolpe);
 
@@ -79,7 +75,7 @@ public class ColisorDeDanoBase : MonoBehaviour
                     aG.impactos++;
                     */
                     
-        }
+       // }
 
         if (impacto)
             Destroy(impacto, 1.5f);

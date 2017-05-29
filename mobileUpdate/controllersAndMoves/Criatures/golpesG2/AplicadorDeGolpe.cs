@@ -14,7 +14,6 @@ public class AplicadorDeGolpe :MonoBehaviour
         gerente = GetComponent<CreatureManager>();
         ParaliseNoTempo();
         esseGolpe.IniciaGolpe(gameObject);        
-
         tempoDecorrido -= GolpePersonagem.RetornaGolpePersonagem(gameObject,esseGolpe.Nome).TempoDeInstancia;
     }
 

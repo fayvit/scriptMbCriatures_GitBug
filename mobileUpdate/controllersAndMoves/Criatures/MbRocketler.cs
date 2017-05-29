@@ -30,7 +30,7 @@ public class MbRocketler
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.pedregulho,
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 Colisor = new colisor("Esqueleto/hips/spine/chest/upper_arm_R/forearm_R/hand_R"),
                 DistanciaEmissora = 1f,
                 AcimaDoChao = 0.15f,
@@ -39,7 +39,7 @@ public class MbRocketler
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.avalanche,
-                NivelDoGolpe = 8,
+                NivelDoGolpe = 12,
                 Colisor = new colisor("Esqueleto/hips/spine/chest/neck/head",new Vector3(-0.72f,0,0.52f),Vector3.zero),
                 TaxaDeUso = 1.25f
 }

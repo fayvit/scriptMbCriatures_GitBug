@@ -27,7 +27,7 @@ public class PolyCharmG2
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.rajadaDeFogo,
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 Colisor = new colisor("Arma__o_001/coluna1/coluna2/coluna3/pescoco/cabeca"),
                 DistanciaEmissora = 1f,
                 AcimaDoChao = 0.15f,
@@ -36,7 +36,7 @@ public class PolyCharmG2
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.tosteAtaque,
-                NivelDoGolpe = 8,
+                NivelDoGolpe = 12,
                 Colisor = new colisor("Arma__o_001/coluna1",
                                                    new Vector3(0f,0,0),
                                                    new Vector3(0,0,0)),

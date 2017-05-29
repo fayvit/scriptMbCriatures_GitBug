@@ -29,8 +29,6 @@ public class VentoCortanteAoChao : MonoBehaviour
             if (instanciados[i] == null)
                 instanciados.Remove(instanciados[i]);
 
-        Debug.Log(instanciados.Count);
-
         tempoDecorrido += Time.deltaTime;
 
         if (tempoDecorrido > 0.025f)

@@ -17,11 +17,19 @@ public class LoadAndSaveGame
     public void SalvarArquivo(string nomeArquivo,object conteudo)
     {
         BinaryFormatter bf = new BinaryFormatter();
+        try
+        {
+            FileStream file = File.Create(Application.persistentDataPath + "/" + nomeArquivo);
+            bf.Serialize(file, conteudo);
+            file.Close();
+        }
+        catch (IOException e)
+        {
+            Debug.Log(e.StackTrace);
+            Debug.LogWarning("Save falhou");
+        }
 
-        FileStream file = File.Create(Application.persistentDataPath+"/"+nomeArquivo);
-        bf.Serialize(file, conteudo);
-
-        file.Close();
+        
     }
 
     public void Save(SaveDates paraSalvar)

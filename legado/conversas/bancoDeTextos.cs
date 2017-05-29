@@ -894,8 +894,8 @@ public class bancoDeTextos{
                 }},
 				{"shopInfoItem",new List<string>()
 				{
-					" Maçã recupera 10 PV de um Criature",
-					" Burguer recupera 40 PV de um Criature",
+					" Maçã recupera 40 PV de um Criature",
+					" Burguer recupera 100 PV de um Criature",
 					" Carta Luva é usada para tentar capturar novos Criatures",
 					" Gasolina recupera 40 PE de um Criature do tipo Fogo",
 					" Água Tônica recupera 40 PE de um Criature do tipo Água",
@@ -904,7 +904,7 @@ public class bancoDeTextos{
 					" Quartzo recupera 40 PE de um Criature do tipo Pedra",
 					" Adubo recupera 40 PE de um Criature do tipo Terra",
 					" Seiva recupera 40 PE de um Criature do tipo Inseto",
-					" Inseticida recupera 40 PE de um Criature do tipo Inseto",
+					" Inseticida recupera 40 PE de um Criature do tipo Veneno",
 					" Aura recupera 40 PE de um Criature do tipo Psiquico",
 					" Repolho com Ovo recupera 40 PE de um Criature do tipo Gás",
 					" Ventilador recupera 40 PE de um Criature do tipo Voador",
@@ -914,7 +914,7 @@ public class bancoDeTextos{
 					" Um item muito suspeito encostado no fundo da loja",
 					" Uma estatua feita de pedra amarelada em pose imponente",
 					" É o dim dim do jogo",
-					" Quando lido esse pergaminho o criature alvo recupera totalmente os PVs e os PEs além de remover os status negativos ",
+					" Quando lido esse pergaminho, o criature alvo recupera totalmente os PVs e os PEs além de remover os status negativos ",
 					" O Antidoto cura Criatures que estão envenenados ",
 					" O Amuleto devolve a coragem para Criatures amedrontados ",
 					" O Tônico cura Criatures paralisados",
@@ -2132,8 +2132,8 @@ public class bancoDeTextos{
 				}},
 				{"shopInfoItem",new List<string>()
 					{
-						"Apple recovers 10 PV of a Creature",
-						"Burger recovers 40 PV a Criature",
+						"Apple recovers 40 PV of a Creature",
+						"Burger recovers 100 PV a Criature",
 						"Glove Card is used to try to capture new Criatures",
 						"Gasoline recovers 40 PE a Criature Fire-type",
 						"Tonic Water recovers 40 PE a Criature Water-type ",
@@ -2385,6 +2385,7 @@ public enum ChaveDeTexto
     primeiroArmagedom,
     frasesDeArmagedom,
     simOuNao,
+    itens,
     //bom dia
     bomDia,
         //Infinity
@@ -2415,6 +2416,8 @@ public enum ChaveDeTexto
     ive10,
     ive11,
     ive12,
+    //barreiras
+    barreirasDeGolpes,
     shopBasico,
     frasesDeShoping,
     comprarOuVender,

@@ -102,12 +102,17 @@ public class RajadaDeAguaG2 : GolpeBase
             {
                 if (impactos % 10 == 0)
                 {
+                    
                     GameObject Golpe = elementosDoJogo.el.retorna(DoJogo.impactoDeAgua);
                     Object impacto = MonoBehaviour.Instantiate(Golpe, hit.point, Quaternion.identity);
                     MonoBehaviour.Destroy(impacto, 0.5f);
 
                     if (impactos == 0)
+                    {
                         Dano.VerificaDano(hit.transform.gameObject, G, this);
+
+                        
+                    }
 
                 }
                 impactos++;

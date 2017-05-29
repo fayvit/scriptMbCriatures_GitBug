@@ -5,7 +5,17 @@ public class MbEscorpion
 {
     static List<GolpePersonagem> listaDosGolpes = new List<GolpePersonagem>()
         {
-
+        //Golpes aprendidos com pergaminhos        
+            new GolpePersonagem()
+            {
+                Nome = nomesGolpes.multiplicar,
+                NivelDoGolpe = -1,
+                Colisor = new colisor(),
+                TaxaDeUso = 1.5f
+            },
+        /*
+            fim dos golpes aprendidos com eprgaminhos
+        */
             new GolpePersonagem()
             {
                 NivelDoGolpe = 1,
@@ -25,14 +35,14 @@ public class MbEscorpion
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.ondaVenenosa,
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 Colisor = new colisor("Arma__o/Bone/Bone_003/Bone_004/Bone_005/Bone_006/rabo"),
                 TaxaDeUso = 1.25f
             },
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.chuvaVenenosa,
-                NivelDoGolpe = 8,
+                NivelDoGolpe = 12,
                 Colisor = new colisor("",new Vector3(0,0.316f,0.437f),Vector3.zero),
                 TaxaDeUso = 1.25f
             }

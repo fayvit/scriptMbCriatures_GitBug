@@ -28,7 +28,7 @@ public class MbSerpente
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.furacaoDeFolhas,
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 Colisor = new colisor("esqueleto/centroReverso/r1/r2/r3/rabo"),
                 DistanciaEmissora = 2.75f,
                 AcimaDoChao = 0.15f,
@@ -38,7 +38,7 @@ public class MbSerpente
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.tempestadeDeFolhas,
-                NivelDoGolpe = 8,
+                NivelDoGolpe = 12,
                 Colisor = new colisor("esqueleto/centroReverso",
                                                             new Vector3(0,0f,0),
                                                             new Vector3(0,0,0)),

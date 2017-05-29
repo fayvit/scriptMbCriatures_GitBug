@@ -25,7 +25,6 @@ public class EstouEmDano : MonoBehaviour
         controle = GetComponent<CharacterController>();
         posInicial = transform.position;
         alturaDoDano = transform.position.y;
-        
     }
 
     // Update is called once per frame

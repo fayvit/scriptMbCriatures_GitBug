@@ -127,7 +127,7 @@ public class SceneLoader
 
                 progresso /= a2.Length;
 
-                Debug.Log(progresso + " : " + (tempo / tempoMin) + " : " + Mathf.Min(progresso, tempo / tempoMin, 1));
+                //Debug.Log(progresso + " : " + (tempo / tempoMin) + " : " + Mathf.Min(progresso, tempo / tempoMin, 1));
 
                 loadBar.ValorParaBarra(Mathf.Min(progresso, tempo / tempoMin, 1));
 

@@ -28,7 +28,7 @@ public class MbOnarac
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.sobreSalto,
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 Colisor = new colisor("esqueleto/corpo/",
                                               new Vector3(0,0,1.2f),
                                               new Vector3(0f,0.113f,-0.292f)),
@@ -37,7 +37,7 @@ public class MbOnarac
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.anelDoOlhar,
-                NivelDoGolpe = 8,
+                NivelDoGolpe = 12,
                 Colisor = new colisor("esqueleto/corpo/"),
                 DistanciaEmissora = 0.5f,
                 TaxaDeUso = 1.25f

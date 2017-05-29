@@ -29,10 +29,19 @@ public class ArpiaG2
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.ventosCortantes,
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 Colisor = new colisor("Esqueleto/corpo1/corpo2/corpo3/pescoco/cabeca"),
                 DistanciaEmissora = 1f,
                 AcimaDoChao = 0.15f,
+                TaxaDeUso = 1.25f
+            },
+            new GolpePersonagem()
+            {
+                Nome = nomesGolpes.sobreVoo,
+                NivelDoGolpe = 12,
+                Colisor = new colisor("Esqueleto/corpo1/Bone_L",
+                                                  new Vector3(0,-0.5f,0.9f),
+                                                  new Vector3(-0.81f,0.12f,-1.252f)),
                 TaxaDeUso = 1.25f
             }
         };

@@ -1,24 +1,23 @@
-﻿using UnityEngine;
-using System.Collections;
-
-[System.Serializable]
+﻿[System.Serializable]
 /// <summary>
 /// Classe responsavel pelo uso da maçã
 /// </summary>
-public class MbMaca : MbItens
+public class MbMaca : ItemDeRecuperacaoBase
 {
-    [System.NonSerialized]private CreatureManager CriatureAlvoDoItem;
-    private const float TEMPO_DE_ANIMA_CURA_1 = 1.5f;
+    //[System.NonSerialized]private CreatureManager CriatureAlvoDoItem;
+    //private const float TEMPO_DE_ANIMA_CURA_1 = 1.5f;
 
     public MbMaca(int estoque = 1) : base(new ContainerDeCaracteristicasDeItem(nomeIDitem.maca)
     {
-        valor = 10
+        valor = 40
     }
         )
     {
         Estoque = estoque;
+        valorDeRecuperacao = 40;
     }
 
+    /*
     public override void IniciaUsoDeMenu(GameObject dono)
     {
         GameController.g.HudM.P_EscolheUsoDeItens.AtivarParaItem(EscolhiEmQuemUsar);
@@ -37,7 +36,7 @@ public class MbMaca : MbItens
         if (ItemQuantitativo.UsaItemDeRecuperacao(C))
         {
             RetirarUmItem(manager, this, 1,FluxoDeRetorno.menuHeroi);
-            ItemQuantitativo.AplicacaoDoItemComMenu(manager,C,TipoQuantitativo.PV,10);            
+            ItemQuantitativo.AplicacaoDoItemComMenu(manager,C,TipoQuantitativo.PV,40);            
         }
         else if (A.PV.Corrente <= 0)
         {
@@ -111,7 +110,7 @@ public class MbMaca : MbItens
                 if (TempoDecorrido > TEMPO_DE_ANIMA_CURA_1)
                 {
 
-                    ItemQuantitativo.RecuperaPV(CriatureAlvoDoItem.MeuCriatureBase.CaracCriature.meusAtributos, 10);
+                    ItemQuantitativo.RecuperaPV(CriatureAlvoDoItem.MeuCriatureBase.CaracCriature.meusAtributos, 40);
                     GameController.g.HudM.AtualizaHudHeroi(CriatureAlvoDoItem.MeuCriatureBase);
                     Estado = EstadoDeUsoDeItem.finalizaUsaItem;
                     return false;
@@ -126,4 +125,5 @@ public class MbMaca : MbItens
         }
         return true;
     }
+    */
 }

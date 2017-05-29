@@ -52,23 +52,18 @@ public class DadosDoPersonagem
     public void InicializadorDosDados()
     {
         CriaturesAtivos = new List<CriatureBase>() {
-             new CriatureBase(nomesCriatures.Baratarab,9),
-             new CriatureBase(nomesCriatures.DogMour,9),
-           new CriatureBase(nomesCriatures.Urkan,9),
-              new CriatureBase(nomesCriatures.Cracler,9),              
-             new CriatureBase(nomesCriatures.Serpente,9),
-             new CriatureBase(nomesCriatures.Steal,9),
+             new CriatureBase(nomesCriatures.Florest,7)
         };
 
         //CriaturesAtivos[1].CaracCriature.meusAtributos.PV.Corrente = 0;
-        //ultCriaturesAtivos[2].CaracCriature.meusAtributos.PV.Corrente = 2;
+        //CriaturesAtivos[2].CaracCriature.meusAtributos.PV.Corrente = 2;
 
         
 
         Itens = new List<MbItens>()
         {
             PegaUmItem.Retorna(nomeIDitem.maca,10),
-            PegaUmItem.Retorna(nomeIDitem.cartaLuva,11),
+            PegaUmItem.Retorna(nomeIDitem.regador,10)
         };
         /*
         itens.Add(new item(nomeIDitem.maca) { estoque = 20 });

@@ -144,6 +144,9 @@
             case nomesGolpes.multiplicar:
                 retorno = new MbMultiplicar();
             break;
+            case nomesGolpes.sobreVoo:
+                retorno = new MbSobreVoo();
+            break;
             default:
                 retorno = new GolpeBase(new ContainerDeCaracteristicasDeGolpe());
             break;

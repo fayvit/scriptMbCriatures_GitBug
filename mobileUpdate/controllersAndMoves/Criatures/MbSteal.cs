@@ -28,7 +28,7 @@ public class MbSteal
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.eletricidadeConcentrada,
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 Colisor = new colisor("metarig/hips/chest"),
                 DistanciaEmissora = 1f,
                 TaxaDeUso = 1.25f
@@ -36,7 +36,7 @@ public class MbSteal
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.tempestadeEletrica,
-                NivelDoGolpe = 9,
+                NivelDoGolpe = 12,
                 Colisor = new colisor("metarig/hips"),
                 TaxaDeUso = 1.25f
             }

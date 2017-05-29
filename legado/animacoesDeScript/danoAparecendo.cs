@@ -8,7 +8,7 @@ public class danoAparecendo : MonoBehaviour {
     public Transform atacado;
 
 	//private Text oTexto;
-	private Vector3 posInicial;
+	private Vector3 posInicial = Vector3.zero;
 	private bool aumenta = true;
 	private Transform cam;
 	// Use this for initialization

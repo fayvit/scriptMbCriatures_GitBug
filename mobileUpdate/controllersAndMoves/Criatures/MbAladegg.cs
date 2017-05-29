@@ -30,10 +30,19 @@ public class MbAladegg
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.ventosCortantes,
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 Colisor = new colisor("esqueleto/corpo"),
                 DistanciaEmissora = 1f,
                 AcimaDoChao = 0.15f,
+                TaxaDeUso = 1.25f
+            },
+            new GolpePersonagem()
+            {
+                Nome = nomesGolpes.sobreVoo,
+                NivelDoGolpe = 12,
+                Colisor = new colisor("esqueleto/corpo/coxaD/pernaD/peD",
+                                                   new Vector3(0,0,0),
+                                                   new Vector3(-0.11f,-0,0.244f)),
                 TaxaDeUso = 1.25f
             }
         };

@@ -26,7 +26,7 @@ public class MbNessei
                 TaxaDeUso = 0.5f
             },new GolpePersonagem()
             {
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 ModPersonagem = 3,
                 Colisor = new colisor("esqueleto/centro/c1/c2/c3/cabeca/bocaB"),
                 Nome = nomesGolpes.turboDeAgua,
@@ -35,7 +35,7 @@ public class MbNessei
                 TempoDeInstancia = 0.15f
             },new GolpePersonagem()
             {
-                NivelDoGolpe = 8,
+                NivelDoGolpe = 12,
                 ModPersonagem = 3,
                 Colisor = new colisor("esqueleto/centroReverso",
                                                             new Vector3(0,0f,0),

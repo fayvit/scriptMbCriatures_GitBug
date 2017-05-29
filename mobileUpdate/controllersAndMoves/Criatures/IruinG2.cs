@@ -24,7 +24,7 @@ public class IruinG2
             TaxaDeUso = 0.5f
             },new GolpePersonagem()
             {
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 ModPersonagem = 0,
                 Colisor = new colisor("Esqueleto/gomo1/cabeca"),
                 Nome = nomesGolpes.gosmaAcida,
@@ -33,7 +33,7 @@ public class IruinG2
             },
             new GolpePersonagem()
             {
-                NivelDoGolpe = 8,
+                NivelDoGolpe = 12,
                 Colisor = new colisor(),
                 Nome = nomesGolpes.multiplicar,
                 TaxaDeUso = 1.25f

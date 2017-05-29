@@ -46,7 +46,7 @@ public class MbBaratarab
             TaxaDeUso = 0.5f
             },new GolpePersonagem()
             {
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 ModPersonagem = 0,
                 Colisor = new colisor("Arma__o/Bone_001/Bone/Bone_002"),
                 Nome = nomesGolpes.gosmaAcida,
@@ -56,9 +56,18 @@ public class MbBaratarab
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.multiplicar,
-                NivelDoGolpe = 8,
+                NivelDoGolpe = 12,
                 Colisor = new colisor(),
                 TaxaDeUso = 1.5f
+            },
+            new GolpePersonagem()
+            {
+                Nome = nomesGolpes.sobreVoo,
+                NivelDoGolpe = 9,
+                Colisor = new colisor("Arma__o/Bone_001/Bone/",
+                                                      new Vector3(0,0,0),
+                                                      new Vector3(-0.163f,0.017f,0.139f)),
+                TaxaDeUso = 0.5f
             }
         };
 

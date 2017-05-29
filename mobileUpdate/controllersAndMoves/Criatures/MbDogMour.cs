@@ -27,7 +27,7 @@ public class MbDogMour
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.rajadaDeGas,
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 Colisor = new colisor("Esqueleto/Bone/Bone_001/Bone_002/Bone_003/Bone_004/Bone_005"),
                 DistanciaEmissora = 1f,
                 AcimaDoChao = 0.15f,
@@ -36,7 +36,7 @@ public class MbDogMour
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.cortinaDeFumaca,
-                NivelDoGolpe = 8,
+                NivelDoGolpe = 12,
                 Colisor = new colisor(),
                 TaxaDeUso = 1.25f
             }

@@ -14,6 +14,7 @@ public class ListaDeTextosPT_BR
                 ColocaTextos(ref txt, TextosChaveEmPT_BR.txt);
                 ColocaTextos(ref txt, TextosInfinity.txt);
                 ColocaTextos(ref txt, TextosIve.txt);
+                ColocaTextos(ref txt, TextosDeBarreirasPT_BR.txt);
             }
 
             return txt;

@@ -12,12 +12,17 @@ public class MensDeUsoDeItem
 
     public static void MensDeMorto(string nomeDoCriatureBase)
     {
-        ApresentaMensagem(string.Format(bancoDeTextos.falacoes[heroi.lingua]["itens"][2], nomeDoCriatureBase));
+        ApresentaMensagem(string.Format(bancoDeTextos.RetornaListaDeTextoDoIdioma(ChaveDeTexto.itens)[2], nomeDoCriatureBase));
     }
 
     public static void MensDeNaoPrecisaDesseItem(string nomeDele)
     {
-        ApresentaMensagem(string.Format(bancoDeTextos.falacoes[heroi.lingua]["itens"][10],nomeDele));
+        ApresentaMensagem(string.Format(bancoDeTextos.RetornaListaDeTextoDoIdioma(ChaveDeTexto.itens)[9], nomeDele));
+    }
+
+    public static void MensNaoTemOTipo(string nomeDoTipo)
+    {
+        ApresentaMensagem(string.Format(bancoDeTextos.RetornaListaDeTextoDoIdioma(ChaveDeTexto.itens)[3], nomeDoTipo));
     }
     
 }

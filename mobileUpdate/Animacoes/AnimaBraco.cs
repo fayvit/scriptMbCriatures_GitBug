@@ -152,12 +152,12 @@ public class AnimaBraco
                     * Mathf.Max(Vector3.Distance(gerente.transform.position, alvo.transform.position),
                     VELOCIDADE_MINIMA_PARA_MOVIMENTO_DE_CAMERA)))
                     estado = EstadoDoAnimaBraco.animaTroca;
-                break;
+            break;
             case EstadoDoAnimaBraco.animaTroca:
                 animador.AnimaTroca();
                 estado = EstadoDoAnimaBraco.AnimandoTroca;
                 tempoDecorrido = 0;
-                break;
+            break;
             case EstadoDoAnimaBraco.AnimandoTroca:
                 if (tempoDecorrido > TEMPO_DA_PRIMEIRA_ANIMACAO)
                 {
@@ -166,7 +166,7 @@ public class AnimaBraco
                     estado = EstadoDoAnimaBraco.InsereRaioDeLuva;
                     tempoDecorrido = 0;
                 }
-                break;
+            break;
             case EstadoDoAnimaBraco.InsereRaioDeLuva:
                 if (tempoDecorrido > TEMPO_PARA_INSTANCIAR_PARTICULA_CHAO && alvo.transform.localScale.sqrMagnitude > 0.01f)
                 {

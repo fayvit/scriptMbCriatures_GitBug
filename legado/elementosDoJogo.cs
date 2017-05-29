@@ -134,7 +134,8 @@ public enum DoJogo
     particulasCoisasBoasUI,
     particulasUpeiDeNivel,
     encontro,
-    raioEletrico
+    raioEletrico,
+    animaPE
 }
 
 /// <summary>

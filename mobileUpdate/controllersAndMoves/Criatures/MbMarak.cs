@@ -28,7 +28,7 @@ public class MbMarak
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.sobreSalto,
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 Colisor = new colisor("Arma__o/corpo3/",
                                          new Vector3(0,-0.75f,1.2f),
                                          new Vector3(-0.365f,0.113f,-0.325f)),
@@ -36,7 +36,7 @@ public class MbMarak
             },
             new GolpePersonagem()
             {
-                NivelDoGolpe = 8,
+                NivelDoGolpe = 12,
                 Colisor = new colisor("Arma__o/corpo3/corpo2/corpo1/pescoco/cabeca/"),
                 Nome = nomesGolpes.anelDoOlhar,
                 TaxaDeUso = 0.5f,

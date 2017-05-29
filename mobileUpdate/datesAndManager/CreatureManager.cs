@@ -57,6 +57,12 @@ public class CreatureManager : MonoBehaviour
         }
     }
 
+    public void MudaParaEstouEmDano()
+    {
+        estado = CreatureState.emDano;
+        ia.SuspendeNav();
+    }
+
 
     public bool MudaAplicaGolpe()
     {
@@ -74,6 +80,8 @@ public class CreatureManager : MonoBehaviour
     {
         if (estado == esseEstado)
         {
+            Debug.Log("libera MOvimento: "+gameObject.name);
+
             if (name == "CriatureAtivo")
                 estado = GameController.g.estaEmLuta ? CreatureState.emLuta : CreatureState.aPasseio;
             else

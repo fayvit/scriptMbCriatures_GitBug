@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class KeyVar
 {
     private Dictionary<KeyShift, bool> shift = new Dictionary<KeyShift, bool>();
+    private Dictionary<string, bool> autoShift = new Dictionary<string, bool>();
     private Dictionary<KeyCont, int> contadorChave = new Dictionary<KeyCont, int>();
     private Dictionary<nomesCriatures, bool> visto = new Dictionary<nomesCriatures, bool>();
     private Dictionary<nomesCriatures, bool> colecionado = new Dictionary<nomesCriatures, bool>();
@@ -55,11 +56,18 @@ public class KeyVar
         {
             dic.Add(key, val);
         }
+        else
+            dic[key] = val;
     }
 
     public void MudaShift(KeyShift key, bool val = false)
     {
         MudaDic(shift, key, val);
+    }
+
+    public void MudaAutoShift(string key, bool val = false)
+    {
+        MudaDic(autoShift, key, val);
     }
 
     public void MudaVisto(nomesCriatures nome, bool val = false)
@@ -75,6 +83,17 @@ public class KeyVar
     public void MudaCont(KeyCont key, int val = 0)
     {
         MudaDic(contadorChave, key,val);
+    }
+
+    public bool VerificaAutoShift(string key)
+    {
+        Debug.Log(autoShift.ContainsKey(key));
+        if (!autoShift.ContainsKey(key))
+        {
+            autoShift.Add(key, false);
+            return false;
+        }
+        else { Debug.Log(autoShift[key]); return autoShift[key]; }
     }
 
 

@@ -25,6 +25,11 @@ public class Dano
 
     public static void VerificaDano(GameObject atacado,GameObject atacante,IGolpeBase golpe)
     {
+        if (atacado.tag == "eventoComGolpe" && !GameController.g.estaEmLuta)
+        {
+            atacado.GetComponent<EventoComGolpe>().DisparaEvento(golpe.Nome);
+        }
+
         CreatureManager GdC = atacado.GetComponent<CreatureManager>();
         if (GdC && !GameController.g.UsandoItemOuTrocandoCriature)
         {
@@ -38,7 +43,7 @@ public class Dano
 
     public static void AplicaDano(CreatureManager doAtacado,GameObject atacante,IGolpeBase golpe)
     {
-        doAtacado.Estado = CreatureManager.CreatureState.emDano;
+        doAtacado.MudaParaEstouEmDano();
         //Transform T = doAtacado.transform;
         Animator animatorDoAtacado = doAtacado.GetComponent<Animator>();
       //  doAtacado.MudaEmDano();

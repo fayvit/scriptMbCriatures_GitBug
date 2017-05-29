@@ -259,10 +259,10 @@ public class tipos  {
 
 public enum nomeTipos
 {
+    nulo=-1,
 	Agua,
 	Fogo,
 	Planta,
-	Gelo,
 	Terra,
 	Pedra,
 	Psiquico,
@@ -271,5 +271,6 @@ public enum nomeTipos
 	Veneno,
 	Inseto,
 	Voador,
-	Gas
+	Gas,
+    Gelo
 }

@@ -114,7 +114,7 @@ public class MbMultiplicar : GolpeBase
                     mC.esseGolpe = this;
                 }
                 MonoBehaviour.Destroy(
-                    MonoBehaviour.Instantiate(elementosDoJogo.el.retorna("impactoDeGosma"), pos, Quaternion.identity),
+                    MonoBehaviour.Instantiate(elementosDoJogo.el.retorna(carac.noImpacto), pos, Quaternion.identity),
                     2);
 
             }

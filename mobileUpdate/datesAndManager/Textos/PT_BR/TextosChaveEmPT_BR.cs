@@ -189,6 +189,20 @@ public static class TextosChaveEmPT_BR
             {
                 "Tem certeza que deseja excluir o Save {0} ?"
             }
-        }
+        },
+                {ChaveDeTexto.itens,new List<string>()
+                {
+                    "Voce não pode usar esse item nesse momento.",
+                    "Ele não precisa usar esse item nesse momento.",
+                    "O criature {0} está desmaiado e não pode usar esse item nesse momento.",//O {0} será substituito pelo nome do Criature
+					"Somente Criatures do tipo {0} podem usar esse item",
+                    "O criature {0} não pode usar o item {1} pois ele já sabe o golpe {2}",
+                    "O Criature {0} não pode aprender o golpe {1}",
+                    "{0} não usou o item {1}",
+                    "Tem certeza que deseja usar o item {0} ?",
+                    " Cesar Corean não pode usar esse item nesse local",
+                    "{0} não precisa usar esse item nesse momento",
+                    "Você não pode usar itens pelo menu enquanto estiver em luta"
+                }}
             };
 }

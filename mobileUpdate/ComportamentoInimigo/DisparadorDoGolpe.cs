@@ -17,6 +17,8 @@ public class DisparadorDoGolpe
             gg.UltimoUso = Time.time;
             aplG.esseGolpe = gg;
 
+            if(!GameController.g.estaEmLuta)
+                GameController.g.HudM.AtualizaHudHeroi(meuCriatureBase);
 
             return true;
         }

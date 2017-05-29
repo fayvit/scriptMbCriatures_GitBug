@@ -24,7 +24,7 @@ public class XuashG2
                 TaxaDeUso = 0.5f
             },new GolpePersonagem()
             {
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 ModPersonagem = 0,
                 Colisor = new colisor("Arma__o/Tronco/pescoco/Cabeca/BocaD"),
                 Nome = nomesGolpes.turboDeAgua,
@@ -32,7 +32,7 @@ public class XuashG2
                 DistanciaEmissora = 0.5f
             },new GolpePersonagem()
             {
-                NivelDoGolpe = 8,
+                NivelDoGolpe = 12,
                 ModPersonagem = 0,
                 Colisor = new colisor("Arma__o/Tronco",
                                                   new Vector3(0,0,0),

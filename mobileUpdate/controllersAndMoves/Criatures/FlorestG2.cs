@@ -28,7 +28,7 @@ public class FlorestG2
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.furacaoDeFolhas,
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 Colisor = new colisor("Arma__o/corpo"),
                 DistanciaEmissora = 1f,
                 AcimaDoChao = 0.15f,
@@ -37,7 +37,7 @@ public class FlorestG2
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.tempestadeDeFolhas,
-                NivelDoGolpe = 9,
+                NivelDoGolpe = 13,
                 Colisor = new colisor("Arma__o/corpo",
                                                    new Vector3(0,0,0.3f),
                                                    new Vector3(0,0,0f)),

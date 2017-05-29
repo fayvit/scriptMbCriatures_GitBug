@@ -29,7 +29,7 @@ public class MbCracler
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.ondaVenenosa,
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 Colisor = new colisor("container/Arma__o/Bone/Bone_R/Bone_R_001"),
                 DistanciaEmissora = 1f,
                 AcimaDoChao = 0.15f,
@@ -38,7 +38,7 @@ public class MbCracler
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.chuvaVenenosa,
-                NivelDoGolpe = 8,
+                NivelDoGolpe = 12,
                 Colisor = new colisor("",new Vector3(0,0.62f,0.21f),Vector3.zero),
                 TaxaDeUso = 1.25f
             }

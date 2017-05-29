@@ -27,7 +27,7 @@ public class MbCabecu
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.vingancaDaTerra,
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 Colisor = new colisor("Arma__o/base/corpo"),
                 TaxaDeUso = 1.25f
                 
@@ -35,7 +35,7 @@ public class MbCabecu
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.cortinaDeTerra,
-                NivelDoGolpe = 8,
+                NivelDoGolpe = 12,
                 Colisor = new colisor(),
                 TaxaDeUso = 1.25f
             }

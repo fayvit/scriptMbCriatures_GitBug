@@ -91,6 +91,7 @@ public class NPCdeConversa
         MonoBehaviour.Destroy(destrutivel.gameObject);
         GameController.g.HudM.ligarControladores();
         GameController.g.HudM.Botaozao.FinalizarBotao();
+        GameController.g.HudM.DisparaT.DesligarPaineis();
         AndroidController.a.LigarControlador();
     }
 

@@ -27,7 +27,7 @@ public class MbFlam
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.rajadaDeFogo,
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 Colisor = new colisor("Esqueleto/Bone/Bone_001/Bone_002/Bone_003/Bone_004/Bone_005"),
                 DistanciaEmissora = 1f,
                 AcimaDoChao = 0.15f,
@@ -36,7 +36,7 @@ public class MbFlam
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.tosteAtaque,
-                NivelDoGolpe = 8,
+                NivelDoGolpe = 12,
                 Colisor = new colisor("Esqueleto/Bone",
                                                    new Vector3(0f,0,0),
                                                    new Vector3(0f,0f,-0f)),

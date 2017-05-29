@@ -25,7 +25,7 @@ public class MbBabaucu
                 TaxaDeUso = 0.5f
             },new GolpePersonagem()
             {
-                NivelDoGolpe = 2,
+                NivelDoGolpe = 7,
                 ModPersonagem = 0,
                 Colisor = new colisor("esqueleto/corpo/",
                                               new Vector3(0,0,1.2f),
@@ -35,7 +35,7 @@ public class MbBabaucu
             },
             new GolpePersonagem()
             {
-                NivelDoGolpe = 8,
+                NivelDoGolpe = 12,
                 Colisor = new colisor("esqueleto"),
                 Nome = nomesGolpes.anelDoOlhar,
                 TaxaDeUso = 0.5f,
