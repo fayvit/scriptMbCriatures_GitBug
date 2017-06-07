@@ -31,21 +31,22 @@ public class MapaPorSript : MonoBehaviour
 
     void ColoqueBLoco(Color C, int x, int y)
     {
-        GameObject G;
+        GameObject G = null;
         if (C.r != 0)
             Debug.Log(C);
 
         
-            if(C== Color.red)
+            if(C== new Color(1,1,0))
                 G = blocoDeTerra;
             else
-            if(C==Color.blue)
+            if(C==new Color(1,0,1))
                 G = blocoComTijoloes;
             else
+            if(C==Color.red)
                 G = blocoDeGrama;
             
         
-
+        if(G!=null)
         Instantiate(G, new Vector3(x * 10, 0, y * 10), Quaternion.identity);
     }
 }

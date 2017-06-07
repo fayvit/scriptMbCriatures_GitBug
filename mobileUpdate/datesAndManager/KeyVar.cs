@@ -139,7 +139,10 @@ public class KeyVar
 
 public enum KeyShift
 {
-    primeiraCaptura
+    primeiraCaptura,
+    estouNoTuto,
+    fezPrimeiraFalaDeTuto,
+    fezSegundaFalaDeTuto
 }
 
 public enum KeyCont

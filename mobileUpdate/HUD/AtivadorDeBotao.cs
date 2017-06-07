@@ -16,17 +16,12 @@ public class AtivadorDeBotao : MonoBehaviour
 
     protected void FluxoDeBotao()
     {
-        GameController g = GameController.g;
-        HudManager hudM = g.HudM;
-        AndroidController.a.DesligarControlador();
+        GameController.EntrarNoFluxoDeTexto();
+
+        GameController.g.Manager.transform.rotation = Quaternion.LookRotation(
+            Vector3.ProjectOnPlane(transform.position - GameController.g.Manager.transform.position, Vector3.up));
+
         
-
-        g.Manager.Estado = EstadoDePersonagem.parado;
-        g.Manager.transform.rotation = Quaternion.LookRotation(
-            Vector3.ProjectOnPlane(transform.position - g.Manager.transform.position, Vector3.up));
-
-        hudM.DesligaControladores();
-        hudM.MenuDeI.FinalizarHud();
         Update();
     }
 

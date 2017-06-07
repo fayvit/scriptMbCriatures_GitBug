@@ -30,18 +30,11 @@ public class AtivadorDoBotaoConversa : AtivadorDeBotao
     public void BotaoConversa()
     {
         FluxoDeBotao();
-        
-        Vector3 dir = GameController.g.Manager.transform.position - transform.position;
-        dir = Vector3.ProjectOnPlane(dir, Vector3.up);
-        transform.rotation = Quaternion.LookRotation(dir);
 
-        Transform T = new GameObject().transform;
+        Transform T = TransformPosDeConversa.MeAjude(transform);
+
         npc.IniciaConversa(T);
-        T.position = transform.position + 0.5f * dir+2*Vector3.up;
-        Vector3 cross = Vector3.Cross(Vector3.up, dir);
-        if (Vector3.Dot(cross, -Vector3.forward) < 0)
-            cross *= -1;
-        T.rotation = Quaternion.LookRotation(cross);
+        
         AplicadorDeCamera.cam.InicializaCameraExibicionista(T, 1,true);
     }
 }

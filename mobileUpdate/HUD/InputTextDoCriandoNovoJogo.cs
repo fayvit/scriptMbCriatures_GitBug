@@ -54,7 +54,9 @@ public class InputTextDoCriandoNovoJogo : MonoBehaviour
     void IniciarCarregarCena(int indice)
     {
         gameObject.SetActive(false);
-        InitialSceneManager.i.LoadScene.IniciarCarregamento(indice);
+        GameObject G = new GameObject();
+        SceneLoader loadScene = G.AddComponent<SceneLoader>();
+        loadScene.CenaDoCarregamento(indice);
     }
 
     public void Voltar()

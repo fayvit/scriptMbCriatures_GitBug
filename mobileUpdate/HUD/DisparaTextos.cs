@@ -42,7 +42,7 @@ public class DisparaTexto
         indiceDaConversa = 0;
     }
 
-    public bool UpdateDeTextos(string[] conversa,Sprite foto)
+    public bool UpdateDeTextos(string[] conversa,Sprite foto = null)
     {
         if (indiceDaConversa < conversa.Length)
         {

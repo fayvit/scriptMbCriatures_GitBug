@@ -7,8 +7,8 @@ public class HudManager
 {
     [SerializeField]private HudVida hudCriatureAtivo;
     [SerializeField]private HudVida hudInimigo;
-    [SerializeField]private GameObject containerDoInimigo;
-    [SerializeField]private GameObject containerDoLabelInimigo;
+    //[SerializeField]private GameObject containerDoLabelHeroi;
+    //[SerializeField]private GameObject containerDoLabelInimigo;
     [SerializeField]private PainelMensCriature painelMensagemCriature;
 
     [SerializeField]private BtnsManager btns;
@@ -127,14 +127,12 @@ public class HudManager
 
     void LigaContainerDoInimigo()
     {
-        containerDoInimigo.SetActive(true);
-        containerDoLabelInimigo.SetActive(true);
+        hudInimigo.container.SetActive(true);
     }
 
     public void DesligaContainerDoInimigo()
     {
-        containerDoInimigo.SetActive(false);
-        containerDoLabelInimigo.SetActive(false);
+        hudInimigo.container.SetActive(false);
     }
 
     void AtualizaDadosDaHud(HudVida essaHud, CriatureBase C)
@@ -179,13 +177,13 @@ public class HudManager
 
     public void DesligaControladores()
     {
-        containerDoInimigo.transform.parent.gameObject.SetActive(false);
+        hudInimigo.container.transform.parent.gameObject.SetActive(false);
         btns.btnAtaque.transform.parent.gameObject.SetActive(false);
     }
 
     public void ligarControladores()
     {
-        containerDoInimigo.transform.parent.gameObject.SetActive(true);
+        hudInimigo.container.transform.parent.gameObject.SetActive(true);
         btns.btnAtaque.transform.parent.gameObject.SetActive(true);
     }
 }
@@ -199,5 +197,5 @@ public class HudVida
     public Text nivel;
     public Image barraDeVida;
     public Image barraDeEnergia;
-    
+    public GameObject container;
 }

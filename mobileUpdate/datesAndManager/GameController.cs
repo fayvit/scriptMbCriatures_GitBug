@@ -54,6 +54,7 @@ public class GameController : MonoBehaviour
         get { return myKeys; }
         set { myKeys = value; }
     }
+    
 
     // Use this for initialization
     void Start()
@@ -281,6 +282,17 @@ public class GameController : MonoBehaviour
         encontros.ZeraPosAnterior();
     }
 
+    public static void EntrarNoFluxoDeTexto()
+    {
+        HudManager hudM = g.HudM;
+        AndroidController.a.DesligarControlador();
+        hudM.DesligaControladores();
+        hudM.MenuDeI.FinalizarHud();
+
+
+        g.Manager.Estado = EstadoDePersonagem.parado;
+    }
+
     #region botões de teste
     public void EncontroAgora()
     {
@@ -331,6 +343,13 @@ public class GameController : MonoBehaviour
     public void InsereProps()
     {
         FindObjectOfType<PropsPorScript>().Insere();
+    }
+
+    public void CarregarSaveZero()
+    {
+        GameObject G = new GameObject();
+        SceneLoader loadScene = G.AddComponent<SceneLoader>();
+        loadScene.CenaDoCarregamento(0);
     }
     #endregion
 }

@@ -13,16 +13,16 @@ public class InitialSceneManager : MonoBehaviour
     [SerializeField]private ContainerDeLoadSaves containerDeLoads;
     [SerializeField]private PainelUmaMensagem umaMensagem;
     [SerializeField]private PainelDeConfirmacao confirmacao;
-    [SerializeField]private SceneLoader loadScene;
+   // [SerializeField]private SceneLoader loadScene;
 
     private LoadAndSaveGame salvador = new LoadAndSaveGame();
     private List<PropriedadesDeSave> lista;
 
-    
+    /*
     public SceneLoader LoadScene
     {
         get { return loadScene; }
-    }
+    }*/
     
     public PainelDeConfirmacao Confirmacao
     {
@@ -62,7 +62,7 @@ public class InitialSceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        loadScene.Update();
+        //loadScene.Update();
     }
 
     public void BotaoNovoJogo()
@@ -115,7 +115,12 @@ public class InitialSceneManager : MonoBehaviour
         };
 
         salvador.SalvarArquivo("criaturesGames.ori", lista);
-        LoadScene.IniciarCarregamento(lista[indice].indiceDoSave);
+
+
+        GameObject G = new GameObject();
+        SceneLoader loadScene = G.AddComponent<SceneLoader>();
+        loadScene.CenaDoCarregamento(lista[indice].indiceDoSave);
+
     }
 
     public void FecharLoadContainer()

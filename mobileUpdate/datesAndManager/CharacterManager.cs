@@ -51,8 +51,18 @@ public class CharacterManager : MonoBehaviour {
         {
             dados.InicializadorDosDados();
 
-            InserirCriatureEmJogo();
-            Estado = EstadoDePersonagem.aPasseio;
+            if (GameController.g.MyKeys.VerificaAutoShift(KeyShift.estouNoTuto))
+            {
+                InserirCriatureEmJogo();
+                Estado = EstadoDePersonagem.aPasseio;
+            }
+            else
+            {
+                GameController.g.HudM.InicializaPaineisCriature(this);
+                GameController.g.HudM.HudCriatureAtivo.container.transform.parent.gameObject.SetActive(false);
+                Estado = EstadoDePersonagem.aPasseio;
+            }
+            
         }
     }
 
@@ -123,8 +133,9 @@ public class CharacterManager : MonoBehaviour {
 
 public enum EstadoDePersonagem
 {
+    naoIniciado = -1,
     aPasseio,
     parado,
-    comMeuCriature,
-    naoIniciado
+    comMeuCriature,    
+    movimentoDeFora
 }

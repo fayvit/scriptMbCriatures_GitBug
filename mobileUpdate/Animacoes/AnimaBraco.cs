@@ -77,7 +77,7 @@ public class AnimaBraco
                 tempoDecorrido = 0;
                 animador.AnimaEnvia();
                 estadoEnvia = EstadoDoAnimaEnvia.animaEnvia;
-                break;
+            break;
             case EstadoDoAnimaEnvia.animaEnvia:
                 if (tempoDecorrido > TEMPO_DA_ANIMA_ENVIA)
                 {

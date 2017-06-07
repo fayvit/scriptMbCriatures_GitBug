@@ -10,6 +10,11 @@ public class TriggerGerenciadorDeCena : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
+        if (col.gameObject.tag == "Criature" && !GameController.g.estaEmLuta)
+        {
+            GameController.g.Manager.AoHeroi();
+        }
+
         if (col.gameObject.tag == "Player")
         {
             if (ligar)
@@ -94,5 +99,6 @@ public enum NomesCenas
     FlorestaLesteDeIve,
     MbFlorestaOesteDeIve,
     MbIve,
-    fortalezaStealer
+    fortalezaStealer,
+    cavernaInicial
 }

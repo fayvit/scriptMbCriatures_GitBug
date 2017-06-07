@@ -48,8 +48,11 @@ public class BtnsManager
 
     public void ImagemDoAtaque(CharacterManager manager)
     {
-        GerenciadorDeGolpes gg = manager.CriatureAtivo.MeuCriatureBase.GerenteDeGolpes;
-        imgDoAtaque.texture = elementosDoJogo.el.RetornaMini(gg.meusGolpes[gg.golpeEscolhido].Nome);
+        if (manager.CriatureAtivo)
+        {
+            GerenciadorDeGolpes gg = manager.CriatureAtivo.MeuCriatureBase.GerenteDeGolpes;
+            imgDoAtaque.texture = elementosDoJogo.el.RetornaMini(gg.meusGolpes[gg.golpeEscolhido].Nome);
+        }
     }
 
     /// <summary>

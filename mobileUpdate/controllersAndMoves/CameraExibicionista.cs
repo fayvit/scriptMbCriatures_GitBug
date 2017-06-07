@@ -47,22 +47,26 @@ public class CameraExibicionista
         }
     }
 
-    public bool MostrarFixa(float velocidadeDeFoco,float distancia = 6)
+    public bool MostrarFixa(float velocidadeDeFoco,float distancia = 6,float altura = -1)
     {
         //Debug.Log(foco);
-        Vector3 posAlvo = foco.position + foco.forward * distancia + Vector3.up * alturaDoPersonagem;
+        if (altura < 0)
+            altura = alturaDoPersonagem;
+
+        Vector3 posAlvo = foco.position + foco.forward * distancia + Vector3.up * altura;
         Vector3 dirAlvo = foco.position - transform.position;
+        dirAlvo.Normalize();
         if (transform)
         {
             transform.position = Vector3.Lerp(transform.position, posAlvo, velocidadeDeFoco * Time.deltaTime);
             transform.rotation = Quaternion.LookRotation(
                 Vector3.Lerp(transform.forward, dirAlvo, velocidadeDeFoco * Time.deltaTime)
                 );
-
+            
             if(contraParedes)
-                cameraPrincipal.contraParedes(transform, foco, alturaDoPersonagem, true);
+                cameraPrincipal.contraParedes(transform, foco, altura, true);
 
-            if (Vector3.Distance(transform.position, posAlvo) < 0.5f && Vector3.Distance(transform.forward, dirAlvo) < 7.5f)
+            if (Vector3.Distance(transform.position, posAlvo) < 0.5f && Vector3.Distance(transform.forward, dirAlvo) < 0.5f)
                 return  true;
         }
         else

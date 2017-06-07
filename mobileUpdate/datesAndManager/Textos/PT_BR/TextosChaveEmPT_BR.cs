@@ -184,7 +184,20 @@ public static class TextosChaveEmPT_BR
                 "A quantidade mínima que você pode vender é 1"
             }
         },
-        { 
+        {
+            ChaveDeTexto.entradinha,new List<string>()
+            {
+                "Então... . É você que veio juntar-se a  nós?",
+                "Nós estamos tentando abrir a <color=yellow>Torre da Vida Eterna</color>",
+                "Para então encarar <color=orange>Logan</color> e mudar o destino de Orion",
+                "Nós estamos apenas no meio do caminho um tanto quanto sem rumo mas já temos algumas lições para tirar",
+                "Rapaz,\r\n todos os que querem fazer uma tarefa difícil tem um começo.",
+                "E só quem já está no meio do caminho sabe como é dificil começar.",
+                "Por isso vamos te ajudar",
+                "Venha Comigo!!"
+            }
+        },
+        {
             ChaveDeTexto.certezaExcluir,new List<string>()
             {
                 "Tem certeza que deseja excluir o Save {0} ?"
@@ -203,6 +216,11 @@ public static class TextosChaveEmPT_BR
                     " Cesar Corean não pode usar esse item nesse local",
                     "{0} não precisa usar esse item nesse momento",
                     "Você não pode usar itens pelo menu enquanto estiver em luta"
-                }}
+                }},
+                {ChaveDeTexto.segundaConversaDaEntradinha,new List<string>()
+                {
+                    "Venha...\n\r Me ajude a tirar essa pedra do caminho"
+                }
+        }
             };
 }

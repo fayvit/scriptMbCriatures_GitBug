@@ -73,9 +73,9 @@ public class AplicadorDeCamera : MonoBehaviour
         estilo = EstiloDeCamera.luta;
     }
 
-    public bool FocarPonto(float velocidadeDeFoco,float distancia = 6)
+    public bool FocarPonto(float velocidadeDeFoco,float distancia = 6,float altura = -1)
     {
         estilo = EstiloDeCamera.focandoPonto;
-        return cExibe.MostrarFixa(velocidadeDeFoco,distancia);
+        return cExibe.MostrarFixa(velocidadeDeFoco,distancia,altura);
     }
 }

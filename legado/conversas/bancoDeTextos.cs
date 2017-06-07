@@ -2422,5 +2422,7 @@ public enum ChaveDeTexto
     frasesDeShoping,
     comprarOuVender,
     textosParaQuantidadesEmShop,
-    certezaExcluir
+    certezaExcluir,
+    entradinha,
+    segundaConversaDaEntradinha
 }
