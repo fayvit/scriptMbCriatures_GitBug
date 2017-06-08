@@ -11,11 +11,22 @@ public class MovimentoControladoParaNPC
 
     private int indiceDaDirecao = 0;
 
+
+
+    public MovimentacaoBasica Mov
+    {
+        get { return mov; }
+    }
+
     public void InsereElementosDeControle(GameObject oControlado,Transform ondeChegar)
     {
         this.oControlado = oControlado;
-        CharacterController Cc = oControlado.AddComponent<CharacterController>();
-        Cc.center = new Vector3(0, 1.05f, 0);
+        if (!oControlado.GetComponent<CharacterController>())
+        {
+            CharacterController Cc = oControlado.AddComponent<CharacterController>();
+            Cc.center = new Vector3(0, 1.05f, 0);
+        }
+
         anima = new AnimadorHumano(oControlado.GetComponent<Animator>());
         mov = new MovimentacaoBasica(
             new CaracteristicasDeMovimentacao() {
@@ -59,6 +70,7 @@ public class MovimentoControladoParaNPC
         }
         else
         {
+            mov.Animador.PararAnimacao();
             mov.AplicadorDeMovimentos(Vector3.zero);
             mov._Pulo.NaoEstouPulando();
             retorno = true;

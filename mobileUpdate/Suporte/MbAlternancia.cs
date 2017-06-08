@@ -24,10 +24,15 @@ public class MbAlternancia
 
     public static void AoHeroi(CharacterManager manager)
     {
+        AplicadorDeCamera.cam.FocarBasica(manager.transform, 10, 10);
         CreatureManager C = manager.CriatureAtivo;
-        AplicadorDeCamera.cam.FocarBasica(manager.transform, 10,10);
-        C.Estado = CreatureManager.CreatureState.seguindo;
+
+        if (C != null)
+        {
+            C.Estado = CreatureManager.CreatureState.seguindo;
+            C.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+        }
         manager.Estado = EstadoDePersonagem.aPasseio;
-        C.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+        
     }
 }

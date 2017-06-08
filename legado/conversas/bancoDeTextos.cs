@@ -2424,5 +2424,6 @@ public enum ChaveDeTexto
     textosParaQuantidadesEmShop,
     certezaExcluir,
     entradinha,
-    segundaConversaDaEntradinha
+    segundaConversaDaEntradinha,
+    continueMeSeguindo
 }

@@ -4,6 +4,7 @@ using System.Collections;
 public class PosDoTutor : MonoBehaviour
 {
     [SerializeField]private Transform pos2;
+    [SerializeField]private Transform pos3;
 
     // Use this for initialization
     void Start()
@@ -13,6 +14,9 @@ public class PosDoTutor : MonoBehaviour
             KeyVar keys = GameController.g.MyKeys;
             if (keys.VerificaAutoShift(KeyShift.fezPrimeiraFalaDeTuto))
                 transform.position = pos2.position;
+
+            if (keys.VerificaAutoShift(KeyShift.fezSegundaFalaDeTuto))
+                transform.position = pos3.position;
         }
     }
 }

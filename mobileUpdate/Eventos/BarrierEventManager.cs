@@ -31,12 +31,9 @@ public class BarrierEventManager : EventoComGolpe
     {
         if (GameController.g)
         {
-            Debug.Log("aqui");
             if (GameController.g.MyKeys.VerificaAutoShift(chave))
             {
-                Debug.Log("aqui2");
                 gameObject.SetActive(false);
-
             }
             jaIniciaou = true;
         }

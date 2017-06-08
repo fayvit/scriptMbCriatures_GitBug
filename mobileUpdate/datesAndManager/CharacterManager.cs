@@ -51,7 +51,7 @@ public class CharacterManager : MonoBehaviour {
         {
             dados.InicializadorDosDados();
 
-            if (GameController.g.MyKeys.VerificaAutoShift(KeyShift.estouNoTuto))
+            if (!GameController.g.MyKeys.VerificaAutoShift(KeyShift.estouNoTuto))
             {
                 InserirCriatureEmJogo();
                 Estado = EstadoDePersonagem.aPasseio;

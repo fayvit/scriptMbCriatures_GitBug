@@ -137,9 +137,14 @@ public class SceneLoader:MonoBehaviour
             AplicadorDeCamera.cam.transform.position = new Vector3(483, 12f, 745);
             manager.transform.position = new Vector3(483, 1.2f, 755);
             GameController.g.ReiniciarContadorDeEncontro();
-            MonoBehaviour.Destroy(manager.CriatureAtivo.gameObject);
-            manager.InserirCriatureEmJogo();
-            manager.CriatureAtivo.transform.position = new Vector3(483, 1.2f, 756);
+
+            if (manager.CriatureAtivo != null)
+            {
+                MonoBehaviour.Destroy(manager.CriatureAtivo.gameObject);
+                manager.InserirCriatureEmJogo();
+                manager.CriatureAtivo.transform.position = new Vector3(483, 1.2f, 756);
+            }
+
             GameController.g.Salvador.SetarJogoAtual(indiceDoJogo);
         }
 

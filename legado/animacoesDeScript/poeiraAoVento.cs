@@ -8,13 +8,14 @@ public class poeiraAoVento : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		elementos = elementosDoJogo.el;
-		Invoke("poeira",0.15f);
+		
+		Invoke("poeira",0.5f);
 	}
 
 	void poeira()
 	{
-		GameObject G = elementos.retorna(particula);
+        elementos = elementosDoJogo.el;
+        GameObject G = elementos.retorna(particula);
 		Vector3 pos = Vector3.zero;
 		RaycastHit ray = new RaycastHit();
 		if(Physics.Raycast(transform.position,Vector3.down,out ray))

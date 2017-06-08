@@ -25,6 +25,16 @@ public class AnimadorHumano
         animator.SetBool("chama", false);
     }
 
+    public void AnimaEmpurra()
+    {
+        animator.Play("empurrando");
+    }
+
+    public void ForcarPadrao()
+    {
+        animator.Play("padrao");
+    }
+
     public void AnimaEnvia()
     {
         animator.SetBool("envia", true);

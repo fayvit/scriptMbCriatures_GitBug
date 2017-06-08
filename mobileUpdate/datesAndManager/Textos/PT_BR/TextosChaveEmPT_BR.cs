@@ -221,6 +221,11 @@ public static class TextosChaveEmPT_BR
                 {
                     "Venha...\n\r Me ajude a tirar essa pedra do caminho"
                 }
+        },
+                {ChaveDeTexto.continueMeSeguindo,new List<string>()
+                {
+                    "Continue me seguindo"
+                }
         }
             };
 }
