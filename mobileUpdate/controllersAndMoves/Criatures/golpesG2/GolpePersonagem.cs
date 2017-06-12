@@ -8,7 +8,7 @@ public class GolpePersonagem
     [SerializeField]private colisor _colisor = new colisor();
 
     [SerializeField]private int nivelDoGolpe = 1;
-    [SerializeField]private int modPersonagem = 0;
+    [SerializeField]private float modPersonagem = 0;
     [SerializeField]private float acimaDoChao = 0;
     [SerializeField]private float distanciaEmissora = 0;
     [SerializeField]private float tempoDeInstancia = 0;
@@ -113,7 +113,7 @@ public class GolpePersonagem
         }
     }
 
-    public int ModPersonagem
+    public float ModPersonagem
     {
         get
         {

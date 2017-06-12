@@ -70,14 +70,15 @@
 
     static AtributoInstrinseco atualizaAtributoIntrinseco(float pontinhos, AtributoInstrinseco A)
     {
+        int valorInicialDeAtributo = 8;
         if (pontinhos > 5)
         {
             
             A = new AtributoInstrinseco(
-                2 + (int)pontinhos,
+                valorInicialDeAtributo + (int)pontinhos,
                 A.Taxa,
-                2 + (int)pontinhos + 5,
-                2 + (int)pontinhos - 5,
+                valorInicialDeAtributo + (int)pontinhos + 5,
+                valorInicialDeAtributo + (int)pontinhos - 5,
                 A.ModCorrente,
                 A.ModMaximo
                 );
@@ -87,10 +88,10 @@
         {
             
             A = new AtributoInstrinseco(
-                2 + (int)pontinhos,
+                valorInicialDeAtributo + (int)pontinhos,
                 A.Taxa,
-                2 + (int)(2 * pontinhos - 1),
-                2,
+                valorInicialDeAtributo + (int)(2 * pontinhos - 1),
+                valorInicialDeAtributo,
                 A.ModCorrente,
                 A.ModMaximo
                 );

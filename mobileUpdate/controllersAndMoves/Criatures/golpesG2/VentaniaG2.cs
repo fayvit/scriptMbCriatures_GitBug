@@ -11,7 +11,7 @@ public class VentaniaG2 : ProjetilBase
         tipo = nomeTipos.Voador,
         carac = caracGolpe.projetil,
         custoPE = 1,
-        potenciaCorrente = 2,
+        potenciaCorrente = 3,
         potenciaMaxima = 7,
         potenciaMinima = 1,
         tempoDeReuso = 5,

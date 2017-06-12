@@ -52,7 +52,7 @@ public class DadosDoPersonagem
     public void InicializadorDosDados()
     {
         CriaturesAtivos = new List<CriatureBase>() {
-             new CriatureBase(nomesCriatures.Florest,7)
+             new CriatureBase(nomesCriatures.Iruin,2)
         };
 
         //CriaturesAtivos[1].CaracCriature.meusAtributos.PV.Corrente = 0;

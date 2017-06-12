@@ -14,7 +14,7 @@ public class PainelStatus : MonoBehaviour
     [SerializeField]private RectTransform containerDeTamanhoVariavel;
     [SerializeField]private ScrollRect sRect;
 
-    private int indiceDoSelecionado = 0;
+    protected int indiceDoSelecionado = 0;
     private System.Action<int> acaoDeUsoDeItem;
 
     [System.Serializable]
@@ -57,7 +57,7 @@ public class PainelStatus : MonoBehaviour
         
     }
 
-    void InserirDadosNoPainelPrincipal(CriatureBase C)
+    protected void InserirDadosNoPainelPrincipal(CriatureBase C)
     {
         principal.InserirDadosNoPainelPrincipal(C);
         InsereGolpes(C.GerenteDeGolpes.meusGolpes.ToArray());
@@ -86,9 +86,9 @@ public class PainelStatus : MonoBehaviour
                );
     }
 
-    void AbaSelecionada(int indice)
+    protected void AbaSelecionada(int indice)
     {
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < btnAbas.Length; i++)
         {
             btnAbas[i].sprite = deselecionado;
         }
@@ -131,7 +131,7 @@ public class PainelStatus : MonoBehaviour
         BtnsManager.ReligarBotoes(gameObject);
     }
 
-    public void BtnMeuOutro(int indice)
+    public virtual void BtnMeuOutro(int indice)
     {
         InserirDadosNoPainelPrincipal(GameController.g.Manager.Dados.CriaturesAtivos[indice]);
         AbaSelecionada(indice);

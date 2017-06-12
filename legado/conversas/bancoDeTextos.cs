@@ -2425,5 +2425,9 @@ public enum ChaveDeTexto
     certezaExcluir,
     entradinha,
     segundaConversaDaEntradinha,
-    continueMeSeguindo
+    continueMeSeguindo,
+    asBarreirasDeTuto,
+    mudeParaSeuCriature,
+    certezaDeEscolhaInicial,
+    voceRecebeuCriature
 }

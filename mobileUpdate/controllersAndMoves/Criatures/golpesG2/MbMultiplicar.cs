@@ -17,7 +17,7 @@ public class MbMultiplicar : GolpeBase
         tipo = nomeTipos.Inseto,
         carac = caracGolpe.projetil,
         custoPE = 3,
-        potenciaCorrente = 1,
+        potenciaCorrente = 2,
         potenciaMaxima = 4,
         potenciaMinima = 1,
         tempoDeReuso = 7.5f,

@@ -220,12 +220,34 @@ public static class TextosChaveEmPT_BR
                 {ChaveDeTexto.segundaConversaDaEntradinha,new List<string>()
                 {
                     "Venha...\n\r Me ajude a tirar essa pedra do caminho"
-                }
-        },
+                }},
                 {ChaveDeTexto.continueMeSeguindo,new List<string>()
                 {
                     "Continue me seguindo"
-                }
-        }
+                }},
+                {ChaveDeTexto.asBarreirasDeTuto,new List<string>()
+                {
+                    "Se você caminhar um pouco ao sul da caverna verá tres caminhos bloqueados",
+                    "Esses tuneis te levarão para a saída da caverna",
+                    "Porém para abrir o caminho talvez você precise utilizar os poderes dos criatures",
+                    "Caminhe um pouco ao norte e você encontrará nosso companheiro, <color=orange>Lance Lutz</color>",
+                    "Ele está tentando fazer uma conexão com <color=cyan>Armagedom</color>",
+                    "Se ele conseguir poderemos pegar um dos criatures da nossa reserva para você"
+                }},
+                {ChaveDeTexto.mudeParaSeuCriature,new List<string>()
+                {
+                    "Ótimo, você já tem um Criature agora",
+                    "Você pode alternar para controlar seu criature apertando o botão alternador no painel esquerdo",
+                    "Alterne para o Criature e poderá usar os poderes dele para abrir uma das barreiras ao sul"
+                }},
+                {ChaveDeTexto.certezaDeEscolhaInicial,new List<string>()
+                {
+                    "Tem certeza que deseja escolher o criature {0} do tipo {1}?"
+                }},
+                {ChaveDeTexto.voceRecebeuCriature,new List<string>()
+                {
+                    "Você recebeu o criature {0}"
+                }},
+
             };
 }

@@ -10,7 +10,7 @@ public class GosmaDeInsetoG2 : ProjetilBase
         tipo = nomeTipos.Inseto,
         carac = caracGolpe.projetil,
         custoPE = 1,
-        potenciaCorrente = 2,
+        potenciaCorrente = 3,
         potenciaMaxima = 7,
         potenciaMinima = 1,
         tempoDeReuso = 5,

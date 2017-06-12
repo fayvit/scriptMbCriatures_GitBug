@@ -95,7 +95,7 @@ public class NPCdeConversa
         AndroidController.a.LigarControlador();
     }
 
-    public void IniciaConversa(Transform Destrutivel)
+    public virtual void IniciaConversa(Transform Destrutivel)
     {
         destrutivel = Destrutivel;
         siga.PareAgora();

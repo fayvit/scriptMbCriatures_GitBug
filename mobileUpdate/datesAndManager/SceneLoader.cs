@@ -35,7 +35,7 @@ public class SceneLoader:MonoBehaviour
 
     void IniciarCarregamento(Scene cena,LoadSceneMode mode)
     {
-        Debug.Log("vez");
+        
         loadBar = FindObjectOfType<LoadBar>();
 
         SceneManager.LoadSceneAsync("comunsDeFase", LoadSceneMode.Additive);
@@ -85,6 +85,7 @@ public class SceneLoader:MonoBehaviour
             AplicadorDeCamera.cam.transform.position = S.Posicao + new Vector3(0, 12, -10);//new Vector3(483, 12f, 745);
             manager.transform.position = S.Posicao;//new Vector3(483,1.2f,755);  
             manager.transform.rotation = S.Rotacao;
+            manager.Dados = S.Dados;
             GameController.g.ReiniciarContadorDeEncontro();
 
             if (manager.CriatureAtivo != null)
@@ -94,7 +95,7 @@ public class SceneLoader:MonoBehaviour
                 manager.CriatureAtivo.transform.position = S.Posicao + new Vector3(0, 0, 1);//new Vector3(483, 1.2f, 756);
             }
 
-            manager.Dados = S.Dados;
+            
             manager.Dados.ZeraUltimoUso();
             GameController.g.MyKeys = S.VariaveisChave;
             GameController.g.Salvador.SetarJogoAtual(indiceDoJogo);
@@ -108,12 +109,10 @@ public class SceneLoader:MonoBehaviour
         if (S != null)
         {
             Debug.Log(S.VariaveisChave.CenaAtiva.ToString()+" : "+ scene.name);
-            if (scene.name == S.VariaveisChave.CenaAtiva.ToString() && GameController.g)
+            if (scene.name == S.VariaveisChave.CenaAtiva.ToString())
             {
                 InvocarSetScene(scene);
                 SceneManager.sceneLoaded -= SetarCenaPrincipal;
-
-                Debug.Log(GameController.g);
 
                 ComoPode();
 

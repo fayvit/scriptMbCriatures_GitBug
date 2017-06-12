@@ -135,10 +135,10 @@ public class Dano
         {
             STAB = 1.5f;
         }
-
+        Debug.Log("modificador de potencia para esse golpe é " + golpePersonagem.ModPersonagem);
         //int  dano = (int)((((((((2 * level / 5) + 2) * potenciaDoAtacante* 20*(golpe.PotenciaCorrente+golpePersonagem.ModPersonagem) )/ aDoAtacado.Defesa.Corrente)/ 50) +2) *STAB * multiplicador) *rd / 100);
         int dano = (int)(((2*level+10)*potenciaDoAtacante*(golpe.PotenciaCorrente+golpePersonagem.ModPersonagem)/(aDoAtacado.Defesa.Corrente+250)+2)*STAB*multiplicador*rd);
-        AplicaCalculoComVIsaoDeDano(doAtacado, golpe, aDoAtacado, multiplicador, dano, 0, potenciaDoAtacante);
+        AplicaCalculoComVIsaoDeDano(doAtacado, golpe, aDoAtacado, multiplicador, dano, aDoAtacado.Defesa.Corrente, potenciaDoAtacante);
     }
 
     static void AplicaCalculoComVIsaoDeDano(CreatureManager doAtacado,
@@ -152,7 +152,8 @@ public class Dano
         AplicaCalculoDoDano(aDoAtacado, dano);
         Debug.Log("O dano do GOlpe e " + dano + " O nome do golpe e " + golpe.Nome + " o multiplicador e" + multiplicador
             + " A defesa do inimigo é " + defesa
-            + " A potencia original é " + potenciaDoAtacante);
+            + " A potencia original é " + potenciaDoAtacante
+            +" A potencia do Golpe é "+golpe.PotenciaCorrente);
 
         GameObject visaoDeDano = elementosDoJogo.el.retorna("visaoDeDano");
         visaoDeDano = (GameObject)MonoBehaviour.Instantiate(visaoDeDano, doAtacado.transform.position, Quaternion.identity);

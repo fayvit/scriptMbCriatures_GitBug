@@ -52,25 +52,20 @@ public class ContainerDeAtributos
 {
     public AtributoConsumivel pv = new AtributoConsumivel(14);
     public AtributoConsumivel pe = new AtributoConsumivel(30);
-    public AtributoInstrinseco ataque = new AtributoInstrinseco(3);
-    public AtributoInstrinseco defesa = new AtributoInstrinseco(3);
-    public AtributoInstrinseco poder = new AtributoInstrinseco(3);
+    public AtributoInstrinseco ataque = new AtributoInstrinseco(9);
+    public AtributoInstrinseco defesa = new AtributoInstrinseco(9);
+    public AtributoInstrinseco poder = new AtributoInstrinseco(9);
 }
 
 
 [System.Serializable]
 public class AtributoConsumivel
 {
-    [SerializeField]
-    int basico;
-    [SerializeField]
-    int corrente;
-    [SerializeField]
-    int maximo;
-    [SerializeField]
-    int modMaximo;
-    [SerializeField]
-    float taxa;
+    [SerializeField]int basico;
+    [SerializeField]int corrente;
+    [SerializeField]int maximo;
+    [SerializeField]int modMaximo;
+    [SerializeField]float taxa;
 
     public AtributoConsumivel(int corrente, float taxa = 0.2f, int maximo = 0, int modMaximo = 0)
     {
@@ -131,18 +126,12 @@ public class AtributoConsumivel
 [System.Serializable]
 public class AtributoInstrinseco
 {
-    [SerializeField]
-    int corrente;
-    [SerializeField]
-    int modCorrente;
-    [SerializeField]
-    int maximo;
-    [SerializeField]
-    int modMaximo;
-    [SerializeField]
-    int minimo;
-    [SerializeField]
-    float taxa;
+    [SerializeField]int corrente;
+    [SerializeField]int modCorrente;
+    [SerializeField]int maximo;
+    [SerializeField]int modMaximo;
+    [SerializeField]int minimo;
+    [SerializeField]float taxa;
 
     public AtributoInstrinseco(int corrente, float taxa = 0.2f, int maximo = 0,
                             int minimo = 1, int modCorrente = 0, int modMaximo = 0)

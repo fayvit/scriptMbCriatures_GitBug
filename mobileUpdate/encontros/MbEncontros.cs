@@ -136,6 +136,7 @@ public class MbEncontros
 
     protected virtual List<encontravel> listaEncontravel()
     {
+        //return new List<encontravel>() { new encontravel(nomesCriatures.Escorpion, 2, 1, 2) };
         return ListaEncontravelDeInfinity.EncontraveisDaqui;
     }
 

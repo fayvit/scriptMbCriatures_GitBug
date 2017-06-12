@@ -18,6 +18,7 @@ public class MbBabaucu
             new GolpePersonagem()
             {
                 Nome = nomesGolpes.dentada,
+                ModPersonagem = 1.5f,
                 NivelDoGolpe = 1,
                 Colisor = new colisor("esqueleto/corpo/",
                                                 new Vector3(0,0,0.3f),

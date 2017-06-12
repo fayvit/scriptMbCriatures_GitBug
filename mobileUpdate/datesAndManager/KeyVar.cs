@@ -87,13 +87,15 @@ public class KeyVar
 
     public bool VerificaAutoShift(string key)
     {
-        Debug.Log(autoShift.ContainsKey(key));
+        //Debug.Log(autoShift.ContainsKey(key));
         if (!autoShift.ContainsKey(key))
         {
             autoShift.Add(key, false);
             return false;
         }
-        else { Debug.Log(autoShift[key]); return autoShift[key]; }
+        else { //Debug.Log(autoShift[key]); 
+            return autoShift[key];
+        }
     }
 
 
@@ -139,10 +141,13 @@ public class KeyVar
 
 public enum KeyShift
 {
+    sempreFalse = -2,
+    nula = -1,
     primeiraCaptura,
     estouNoTuto,
     fezPrimeiraFalaDeTuto,
-    fezSegundaFalaDeTuto
+    fezSegundaFalaDeTuto,
+    barreiraPrimeira
 }
 
 public enum KeyCont

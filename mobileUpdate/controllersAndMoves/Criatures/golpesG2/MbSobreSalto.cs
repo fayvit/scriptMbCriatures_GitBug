@@ -11,7 +11,7 @@ public class MbSobreSalto : ImpactoAereoBase
         tipo = nomeTipos.Normal,
         carac = caracGolpe.colisao,
         custoPE = 0,
-        potenciaCorrente = 1,
+        potenciaCorrente = 3,
         potenciaMaxima = 8,
         potenciaMinima = 1,
         tempoDeReuso = 3.5f,

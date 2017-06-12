@@ -9,7 +9,7 @@ public class RajadaDeAguaG2 : GolpeBase
         tipo = nomeTipos.Agua,
         carac = caracGolpe.projetil,
         custoPE = 1,
-        potenciaCorrente = 2,
+        potenciaCorrente = 3,
         potenciaMaxima = 7,
         potenciaMinima = 1,
         tempoDeReuso = 5,

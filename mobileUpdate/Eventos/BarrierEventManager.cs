@@ -8,8 +8,9 @@ public class BarrierEventManager : EventoComGolpe
     [SerializeField]private GameObject finalizaAcao;
     [SerializeField]private nomesGolpes[] ativaveis;
     [SerializeField]private nomeTipos tipoParaAtivar = nomeTipos.nulo;
-    [SerializeField]private int indiceDaMensagem = 0;
+    [SerializeField]private KeyShift chaveEspecial = KeyShift.nula;
     [SerializeField]private string chave;
+    [SerializeField]private int indiceDaMensagem = 0;
     [SerializeField]private bool todoDoTipo = false;
 
     private BarrierEventsState estado = BarrierEventsState.emEspera;
@@ -113,6 +114,7 @@ public class BarrierEventManager : EventoComGolpe
             acaoEfetivada.SetActive(true);
             tempoDecorrido = 0;
             GameController.g.MyKeys.MudaAutoShift(chave, true);
+            GameController.g.MyKeys.MudaShift(chaveEspecial, true);
             AplicadorDeCamera.cam.Basica.NovoFoco(transform,10,10);
         }
     }
